@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1021907770766",
+    "firebase_url": "https://creative-design-9c22c.firebaseio.com",
+    "project_id": "creative-design-9c22c",
+    "storage_bucket": "creative-design-9c22c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021907770766:android:e02e5b99f1adb1501718df",
+        "android_client_info": {
+          "package_name": "com.technology.creativedesign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021907770766-2fh2mml0um32sdvkuqum3rdlmjpnr5ho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTnt18EwxQCqrvEaEUjH5aE4U-JWbBbYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021907770766-2fh2mml0um32sdvkuqum3rdlmjpnr5ho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
