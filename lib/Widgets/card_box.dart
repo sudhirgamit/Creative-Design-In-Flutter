@@ -10,7 +10,7 @@ class Card_Box extends StatelessWidget {
       key: _scaffoldkey,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text("Card With Inkwell Box",style: TextStyle(color: Colors.black),),
+        title: Text("Card Box",style: TextStyle(color: Colors.black),),
         centerTitle: true,
         leading: IconButton(
           onPressed: (){

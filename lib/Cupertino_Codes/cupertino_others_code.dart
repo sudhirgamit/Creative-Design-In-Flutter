@@ -1,5 +1,6 @@
 import 'package:creativedesign/Cupertino/cupertino_others.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:widget_with_codeview/syntax_highlighter.dart';
 
 class Cupertino_Others_Code extends StatelessWidget {
@@ -24,7 +25,7 @@ class Cupertino_Others_Code extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             onPressed: (){
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=>Columns()));
+              launch("https://github.com/sudhirgamit/Creative-Design-In-Flutter/blob/master/lib/Cupertino/cupertino_others.dart");
             },
             icon: Icon(Icons.share,size: 20,color: Colors.black),
           ),

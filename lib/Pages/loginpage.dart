@@ -143,6 +143,23 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text("Sign in to continue",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 18),),
                         ),
                         Positioned(
+                          left: 320,right: 0,top: 30,bottom: 0,
+                          child: InkWell(
+                              splashColor: Colors.blueAccent,
+                              onTap: (){
+                                setState(() {
+                                  Constants.prefs.setBool("LoggedIn", true);
+                                  Constants.prefs.setString("Key", "Guest");
+                                  Constants.prefs.setString("Name", "Guest");
+                                  Constants.prefs.setString("Email", "guest@gmail.com");
+                                  Navigator.pushReplacementNamed(context, "/dashboard");
+                                });
+                              },
+                              child: Text(
+                                "Skip",
+                                style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 20),)),
+                        ),
+                        Positioned(
                           left: 10,right: 10,top: 220,bottom: 30,
                           child: SingleChildScrollView(
                             child: Form(
@@ -236,7 +253,9 @@ class _LoginPageState extends State<LoginPage> {
 
                                                 if(_emailvalid == true && _passwordvalid == true){
                                                   Constants.prefs.setBool("LoggedIn", true);
-                                                  Navigator.pushReplacementNamed(context, "/home");
+                                                  Constants.prefs.setString("Name", "Sudhir Gamit");
+                                                  Constants.prefs.setString("Email", _email.text);
+                                                  Navigator.pushReplacementNamed(context, "/dashboard");
                                                 }
 
                                               });

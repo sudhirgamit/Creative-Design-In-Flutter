@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                 Cardlist_Dialog("Image","SingleChildScrollView, Padding, Column, Image, SizedBox, Card",Icons.picture_in_picture),
                 Cardlist_Dialog("Button","RaiseButton, FlatButton, MaterialButton, IconButton, FloatingActionButton",Icons.tab),
                 Cardlist_Dialog("Progress","Column, Row, Divider, CircularProgressIndicator, LinearProgressIndicator",Icons.sync),
-                Cardlist_Dialog("Card With Inkwell","Center, Column, Card, Inkwell",Icons.credit_card),
+                Cardlist_Dialog("Card","Center, Column, Card, Inkwell",Icons.credit_card),
                 Cardlist_Dialog("TextField","SingleChildScrollView, Column, TextFiled",Icons.edit),
                 Cardlist_Dialog("Dropdown","DropDownMenuItem, PopupMenuUtem",Icons.arrow_drop_down_circle),
                 Cardlist_Dialog("CheckButton","Radio Button, Check Button, Switch Button",Icons.edit_attributes),
@@ -344,7 +344,7 @@ class _HomePageState extends State<HomePage> {
             Navigator.pushReplacementNamed(context, "/button");
           }else if(title=="Progress"){
             Navigator.pushReplacementNamed(context, "/progress");
-          }else if(title=="Card With Inkwell"){
+          }else if(title=="Card"){
             Navigator.pushReplacementNamed(context, "/card");
           }else if(title=="TextField"){
             Navigator.pushReplacementNamed(context, "/textfield");

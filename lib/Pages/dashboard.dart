@@ -1,17 +1,26 @@
 import 'dart:io';
-
 import 'package:creativedesign/Pages/homepage.dart';
 import 'package:creativedesign/Pages/tutorials.dart';
 import 'package:creativedesign/Utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_share/flutter_share.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Dashboard extends StatefulWidget {
   @override
   _DashboardState createState() => _DashboardState();
 }
-
 class _DashboardState extends State<Dashboard> {
+  String Email; String Name; String Key;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Name = Constants.prefs.getString("Name");
+    Email = Constants.prefs.getString("Email");
+    Key = Constants.prefs.getString("Key");
+  }
   // BackPress Button
   Future<bool> onBackPress() {
     return showDialog<bool>(
@@ -66,11 +75,33 @@ class _DashboardState extends State<Dashboard> {
   double yoffset1 = 145;
   double scaleFactor1 = 0.6;
   bool drawermove1 = true;
+  Future<void> share() async {
+    await FlutterShare.share(
+        title: 'Creative Design In Flutter',
+        text: 'This application is make to education purpose for basic,advance and creative design widgets to mobile app developing in flutter.',
+        linkUrl: 'https://play.google.com/store/apps/details?id=com.technology.creativedesign&hl=en_IN',
+        chooserTitle: 'Share'
+    );
+  }
   Widget DrawerItems(String title,IconData icon){
     return ListTile(
       leading: Icon(icon,color: Colors.white,),
       title: Text(title,style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white,fontFamily: "Times New Roman",letterSpacing: 2)),
-      onTap: (){},
+      onTap: (){
+        setState(() {
+          if(title=="Profile"){
+            print("Profile");
+          }else if(title=="Share"){
+            share();
+          }else if(title=="Rate App"){
+            launch("https://play.google.com/store/apps/details?id=com.technology.creativedesign&hl=en_IN");
+          } else if(title=="About Us"){
+            print("About Us");
+          }else if(title=="Help"){
+            launch("mailto:gamitmrsdr@gmail.com");
+          }
+        });
+      },
     );
   }
   @override
@@ -80,66 +111,69 @@ class _DashboardState extends State<Dashboard> {
         backgroundColor: Colors.white,
         body: Stack(
           children: <Widget>[
-            Container(
-              color: Colors.grey,
-              padding: EdgeInsets.only(top: 40,left: 15,bottom: 10),
-              //height: MediaQuery.of(context).size.height,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      CircleAvatar(
-                        maxRadius: 30,
-                        backgroundImage: NetworkImage("https://images.unsplash.com/photo-1503249023995-51b0f3778ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"),
-                      ),
-                      SizedBox(width: 20,),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text("Sudhir Gamit",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: "Times New Roman",letterSpacing: 1),),
-                          SizedBox(height: 3,),
-                          Text("sudhirgamitbca15@gmail.com",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w300,color: Colors.white,fontFamily: "Times New Roman",letterSpacing: 1),),
-                        ],
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: <Widget>[
-                      DrawerItems("Home",Icons.home),
-                      DrawerItems("Profile",Icons.person),
-                      DrawerItems("Share",Icons.share),
-                      DrawerItems("About Us",Icons.info),
-                      DrawerItems("Help",Icons.help),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Icon(Icons.settings,color: Colors.white,),
-                      SizedBox(width: 10,),
-                      Text("Setting",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w300,color: Colors.white,fontFamily: "Times New Roman",letterSpacing: 1),),
-                      SizedBox(width: 10,),
-                      Container(color: Colors.white,height: 18,width: 2,),
-                      SizedBox(width: 10,),
-                      Text("Sign out",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: "Times New Roman",letterSpacing: 1),),
-                      SizedBox(width: 20,),
-                      CircleAvatar(
-                        maxRadius: 20,
-                        backgroundColor: Colors.white,
-                        child: IconButton(
-                          onPressed: (){
-                            setState(() {
-                              Constants.prefs.setBool("LoggedIn",false);
-                              Navigator.pushReplacementNamed(context, "/login");
-                            });
-                          },
-                          icon: Icon(Icons.settings_power,color: Colors.red,),
+            SafeArea(
+              child: Container(
+                color: Colors.grey,
+                padding: EdgeInsets.only(top: 10,left: 15,bottom: 10),
+                //height: MediaQuery.of(context).size.height,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        CircleAvatar(
+                          maxRadius: 30,
+                          backgroundImage: Key=="Guest"? NetworkImage("https://images.unsplash.com/photo-1597239451127-914cc6d50a1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80") : NetworkImage("https://images.unsplash.com/photo-1503249023995-51b0f3778ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"),
                         ),
-                      )
-                    ],
-                  ),
-                ],
+                        SizedBox(width: 20,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(Name,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: "Times New Roman",letterSpacing: 1),),
+                            SizedBox(height: 3,),
+                            Text(Email,style: TextStyle(fontSize: 15,fontWeight: FontWeight.w300,color: Colors.white,fontFamily: "Times New Roman",letterSpacing: 1),),
+                          ],
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        DrawerItems("Profile",Icons.person),
+                        DrawerItems("Share",Icons.share),
+                        DrawerItems("Rate App",Icons.star_half),
+                        DrawerItems("About Us",Icons.info),
+                        DrawerItems("Help",Icons.help),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Icon(Icons.settings,color: Colors.white,),
+                        SizedBox(width: 10,),
+                        Text("Setting",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w300,color: Colors.white,fontFamily: "Times New Roman",letterSpacing: 1),),
+                        SizedBox(width: 10,),
+                        Container(color: Colors.white,height: 18,width: 2,),
+                        SizedBox(width: 10,),
+                        Text("Sign out",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,fontFamily: "Times New Roman",letterSpacing: 1),),
+                        SizedBox(width: 20,),
+                        CircleAvatar(
+                          maxRadius: 20,
+                          backgroundColor: Colors.white,
+                          child: IconButton(
+                            onPressed: (){
+                              setState(() {
+                                Constants.prefs.setBool("LoggedIn",false);
+                                Constants.prefs.clear();
+                                Navigator.pushReplacementNamed(context, "/login");
+                              });
+                            },
+                            icon: Icon(Icons.settings_power,color: Colors.red,),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             AnimatedContainer(
@@ -149,7 +183,7 @@ class _DashboardState extends State<Dashboard> {
               decoration: BoxDecoration(
                   color: Colors.white24.withOpacity(0.7),
                   gradient: LinearGradient(colors: [Colors.white,Colors.grey]),
-                  borderRadius: BorderRadius.all(Radius.circular(drawermove1 ? 30 : 0.0))
+                  borderRadius: BorderRadius.all(Radius.circular(drawermove1 ? 30 : 0.0)),
               ),
               child: SingleChildScrollView(
                 child: Column(
@@ -304,7 +338,7 @@ class _DashboardState extends State<Dashboard> {
               decoration: BoxDecoration(
                   color: Colors.white,
                   gradient: LinearGradient(colors: [Colors.white,Colors.grey]),
-                  borderRadius: BorderRadius.all(Radius.circular(drawermove ? 30 : 0.0))
+                  borderRadius: BorderRadius.all(Radius.circular(drawermove ? 30 : 0.0)),
               ),
               child: SingleChildScrollView(
                 child: Column(
@@ -346,7 +380,7 @@ class _DashboardState extends State<Dashboard> {
                               },
                               child: CircleAvatar(
                                 maxRadius: 20,
-                                backgroundImage: NetworkImage("https://images.unsplash.com/photo-1503249023995-51b0f3778ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"),
+                                backgroundImage: Key=="Guest"? NetworkImage("https://images.unsplash.com/photo-1597239451127-914cc6d50a1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80") : NetworkImage("https://images.unsplash.com/photo-1503249023995-51b0f3778ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"),
                               ),
                             ),
 

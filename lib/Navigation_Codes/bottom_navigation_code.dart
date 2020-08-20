@@ -1,5 +1,6 @@
 import 'package:creativedesign/Navigation/bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:widget_with_codeview/syntax_highlighter.dart';
 
 class Bottom_Navigation_Code extends StatelessWidget {
@@ -24,7 +25,7 @@ class Bottom_Navigation_Code extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             onPressed: (){
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=>Dialog_Box()));
+              launch("https://github.com/sudhirgamit/Creative-Design-In-Flutter/blob/master/lib/Navigation/bottom_navigation.dart");
             },
             icon: Icon(Icons.share,size: 20,color: Colors.black),
           ),
