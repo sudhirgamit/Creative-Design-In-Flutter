@@ -160,6 +160,10 @@ class MyApp extends StatelessWidget {
             "/cup_timepicker": (context)=>Cupertino_TimePicker(),
             "/cup_sliver": (context)=>Cupertino_SliverNavBar(),
             "/cup_others": (context)=>Cupertino_Others(),
+
+            // Advance Widgets
+            // Plugins
+            "/animations": (context)=>Cupertino_ActionSheet(),
           },
         );
       },

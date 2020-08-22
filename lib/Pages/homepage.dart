@@ -15,6 +15,7 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -604,9 +605,9 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           IconButton(
             onPressed: (){
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=>Bottom_Navigation_Code()));
+              launch("https://flutter.dev/docs/development/ui/widgets-intro");
             },
-            icon: Icon(Icons.transfer_within_a_station,size: 25,color: Colors.black,),
+            icon: Icon(Icons.info_outline,size: 25,color: Colors.black,),
           )
         ],
       ),

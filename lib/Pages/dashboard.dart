@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:creativedesign/Pages/advance.dart';
 import 'package:creativedesign/Pages/homepage.dart';
 import 'package:creativedesign/Pages/tutorials.dart';
 import 'package:creativedesign/Utils/constants.dart';
@@ -75,6 +76,7 @@ class _DashboardState extends State<Dashboard> {
   double yoffset1 = 145;
   double scaleFactor1 = 0.6;
   bool drawermove1 = true;
+  bool changecolors = false;
   Future<void> share() async {
     await FlutterShare.share(
         title: 'Creative Design In Flutter',
@@ -108,12 +110,12 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return WillPopScope(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: changecolors ? Colors.blueGrey : Colors.grey,
         body: Stack(
           children: <Widget>[
             SafeArea(
               child: Container(
-                color: Colors.grey,
+                color: changecolors ? Colors.blueGrey : Colors.grey,
                 padding: EdgeInsets.only(top: 10,left: 15,bottom: 10),
                 //height: MediaQuery.of(context).size.height,
                 child: Column(
@@ -356,6 +358,7 @@ class _DashboardState extends State<Dashboard> {
                                   yoffset = 0;
                                   scaleFactor = 1;
                                   drawermove = false;
+                                  changecolors = !changecolors;
                                 });
                               },
                               icon: Icon(Icons.arrow_back_ios,color: Colors.black,),
@@ -413,7 +416,7 @@ class _DashboardState extends State<Dashboard> {
                               ),
                               title: Container(
                                 padding: EdgeInsets.symmetric(vertical: 25,),
-                                child: Text("Flutter Tutorial ",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.w400,letterSpacing: 1)),
+                                child: Text("Flutter Tutorials ",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.w400,letterSpacing: 1)),
                               ),
                             ),
                           ),
@@ -449,6 +452,11 @@ class _DashboardState extends State<Dashboard> {
                             elevation: 5.0,
                             child: ListTile(
                               contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+                              onTap: (){
+                                setState(() {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Advance()));
+                                });
+                              },
                               leading: CircleAvatar(
                                 maxRadius: 30,
                                 child: Chip(
