@@ -4,6 +4,7 @@ import 'package:creativedesign/Pages/loginpage.dart';
 import 'package:creativedesign/Utils/constants.dart';
 import 'package:creativedesign/main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
@@ -45,6 +46,9 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   }
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp
+    ]);
     return MaterialApp(
       navigatorKey: _navigatorKey,
       routes: <String,WidgetBuilder>{

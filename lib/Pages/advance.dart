@@ -14,22 +14,20 @@ class _AdvanceState extends State<Advance> {
     return Card(
       elevation: 5.0,
       child: ListTile(
-        contentPadding: EdgeInsets.all(22),
+        contentPadding: EdgeInsets.all(13),
         onTap: (){
           if(title=="Plugins"){
-            _showModelButtomSheet_Widgets(context);
+            _showModelButtomSheet_Plugins(context);
+          }else if(title=="Animations"){
+            _showModelButtomSheet_Animations(context);
           }else if(title=="Multimedia"){
-            print("Multimedia");
-            //_showModelButtomSheet_AppBar(context);
+            _showModelButtomSheet_Multimedia(context);
           }else if(title=="Socialmedia"){
-            print("Socialmedia");
-            //_showModelButtomSheet_AppBar(context);
+            _showModelButtomSheet_Socialmedia(context);
           } else if(title=="Database"){
-            print("Database");
-            //_showModelButtomSheet_AppBar(context);
+            _showModelButtomSheet_Database(context);
           }else if(title=="Other Widgets"){
-            print("Other Widgets");
-            //_showModelButtomSheet_AppBar(context);
+            _showModelButtomSheet_Other_Widgets(context);
           }
         },
         title: Text(title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,letterSpacing: 2,color: Colors.black),),
@@ -40,7 +38,7 @@ class _AdvanceState extends State<Advance> {
   }
 
   // Buttom Sheet Widgets
-  Widget _showModelButtomSheet_Widgets(context){
+  Widget _showModelButtomSheet_Plugins(context){
     showModalBottomSheet(
         backgroundColor: Colors.transparent,
         context: context,
@@ -50,7 +48,104 @@ class _AdvanceState extends State<Advance> {
             padding: const EdgeInsets.all(8.0),
             child: ListView(
               children: <Widget>[
-                Cardlist_Plugins_Dialog("Animations","Center, Row, Icon",Icons.style),
+                Cardlist_Plugins_Dialog("SharedPreferences","Center, Form, Column, Form, TextFormField, SharedPreferences",Icons.store),
+                Cardlist_Plugins_Dialog("URL Launcher","Center, Column, Text, CupertinoButton, Launch",CupertinoIcons.share_up),
+                Cardlist_Plugins_Dialog("Flutter Slidable","ListView Builder, Dismissible, Container, Row, Icon",Icons.slow_motion_video),
+              ],
+            ),
+          ),
+        )
+    );
+  }
+
+  // Buttom Sheet Animations
+  Widget _showModelButtomSheet_Animations(context){
+    showModalBottomSheet(
+        backgroundColor: Colors.transparent,
+        context: context,
+        builder: (BuildContext context)=>Card(
+          color: Colors.white70.withOpacity(0.7),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView(
+              children: <Widget>[
+                Cardlist_Animations_Dialog("SharedPreferences","Center, Form, Column, Form, TextFormField, SharedPreferences",Icons.store),
+              ],
+            ),
+          ),
+        )
+    );
+  }
+
+  // Buttom Sheet Multimedia
+  Widget _showModelButtomSheet_Multimedia(context){
+    showModalBottomSheet(
+        backgroundColor: Colors.transparent,
+        context: context,
+        builder: (BuildContext context)=>Card(
+          color: Colors.white70.withOpacity(0.7),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView(
+              children: <Widget>[
+                Cardlist_Multimedia_Dialog("SharedPreferences","Center, Form, Column, Form, TextFormField, SharedPreferences",Icons.store),
+              ],
+            ),
+          ),
+        )
+    );
+  }
+
+  // Buttom Sheet Socialmedia
+  Widget _showModelButtomSheet_Socialmedia(context){
+    showModalBottomSheet(
+        backgroundColor: Colors.transparent,
+        context: context,
+        builder: (BuildContext context)=>Card(
+          color: Colors.white70.withOpacity(0.7),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView(
+              children: <Widget>[
+                Cardlist_Socialmedia_Dialog("SharedPreferences","Center, Form, Column, Form, TextFormField, SharedPreferences",Icons.store),
+              ],
+            ),
+          ),
+        )
+    );
+  }
+
+  // Buttom Sheet Database
+  Widget _showModelButtomSheet_Database(context){
+    showModalBottomSheet(
+        backgroundColor: Colors.transparent,
+        context: context,
+        builder: (BuildContext context)=>Card(
+          color: Colors.white70.withOpacity(0.7),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView(
+              children: <Widget>[
+                Cardlist_Database_Dialog("SharedPreferences","Center, Form, Column, Form, TextFormField, SharedPreferences",Icons.store),
+              ],
+            ),
+          ),
+        )
+    );
+  }
+
+  // Buttom Sheet Other Widgets
+  Widget _showModelButtomSheet_Other_Widgets(context){
+    showModalBottomSheet(
+        backgroundColor: Colors.transparent,
+        context: context,
+        builder: (BuildContext context)=>Card(
+          color: Colors.white70.withOpacity(0.7),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView(
+              children: <Widget>[
+                Cardlist_Other_Widgets_Dialog("Dismissible","ListView Builder, Dismissible, Container, Row, Icon",Icons.remove_from_queue),
               ],
             ),
           ),
@@ -66,10 +161,106 @@ class _AdvanceState extends State<Advance> {
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
         subtitle: Text(subtitle),
         trailing: Icon(Icons.slideshow,color: Colors.black),
-        //dense: true,
         onTap: (){
-          if(title=="Animations"){
-            Navigator.pushReplacementNamed(context, "/animations");
+          if(title=="SharedPreferences"){
+            Navigator.pushReplacementNamed(context, "/shared_pref");
+          }else if(title=="URL Launcher"){
+            Navigator.pushReplacementNamed(context, "/url_launch");
+          }else if(title=="Flutter Slidable"){
+            Navigator.pushReplacementNamed(context, "/flut_slidable");
+          }
+        },
+      ),
+    );
+  }
+
+  // Animations
+  Widget Cardlist_Animations_Dialog(String title,String subtitle,IconData icon){
+    return Card(
+      child: ListTile(
+        leading: Icon(icon,color: Colors.black),
+        title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
+        subtitle: Text(subtitle),
+        trailing: Icon(Icons.slideshow,color: Colors.black),
+        onTap: (){
+          if(title=="SharedPreferences"){
+            Navigator.pushReplacementNamed(context, "/shared_pref");
+          }else if(title=="URL Launcher"){
+            Navigator.pushReplacementNamed(context, "/url_launch");
+          }
+        },
+      ),
+    );
+  }
+
+  // Multimedia
+  Widget Cardlist_Multimedia_Dialog(String title,String subtitle,IconData icon){
+    return Card(
+      child: ListTile(
+        leading: Icon(icon,color: Colors.black),
+        title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
+        subtitle: Text(subtitle),
+        trailing: Icon(Icons.slideshow,color: Colors.black),
+        onTap: (){
+          if(title=="SharedPreferences"){
+            Navigator.pushReplacementNamed(context, "/shared_pref");
+          }else if(title=="URL Launcher"){
+            Navigator.pushReplacementNamed(context, "/url_launch");
+          }
+        },
+      ),
+    );
+  }
+
+  // Socialmedia
+  Widget Cardlist_Socialmedia_Dialog(String title,String subtitle,IconData icon){
+    return Card(
+      child: ListTile(
+        leading: Icon(icon,color: Colors.black),
+        title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
+        subtitle: Text(subtitle),
+        trailing: Icon(Icons.slideshow,color: Colors.black),
+        onTap: (){
+          if(title=="SharedPreferences"){
+            Navigator.pushReplacementNamed(context, "/shared_pref");
+          }else if(title=="URL Launcher"){
+            Navigator.pushReplacementNamed(context, "/url_launch");
+          }
+        },
+      ),
+    );
+  }
+
+  // Database
+  Widget Cardlist_Database_Dialog(String title,String subtitle,IconData icon){
+    return Card(
+      child: ListTile(
+        leading: Icon(icon,color: Colors.black),
+        title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
+        subtitle: Text(subtitle),
+        trailing: Icon(Icons.slideshow,color: Colors.black),
+        onTap: (){
+          if(title=="SharedPreferences"){
+            Navigator.pushReplacementNamed(context, "/shared_pref");
+          }else if(title=="URL Launcher"){
+            Navigator.pushReplacementNamed(context, "/url_launch");
+          }
+        },
+      ),
+    );
+  }
+
+  // Other Widgets
+  Widget Cardlist_Other_Widgets_Dialog(String title,String subtitle,IconData icon){
+    return Card(
+      child: ListTile(
+        leading: Icon(icon,color: Colors.black),
+        title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
+        subtitle: Text(subtitle),
+        trailing: Icon(Icons.slideshow,color: Colors.black),
+        onTap: (){
+          if(title=="Dismissible"){
+            Navigator.pushReplacementNamed(context, "/dismissible");
           }
         },
       ),
@@ -106,6 +297,7 @@ class _AdvanceState extends State<Advance> {
           child: ListView(
             children: <Widget>[
               Cardlist_Head("Plugins",Icons.pin_drop),
+              Cardlist_Head("Animations",CupertinoIcons.loop_thick),
               Cardlist_Head("Multimedia",Icons.personal_video),
               Cardlist_Head("Socialmedia",Icons.network_wifi),
               Cardlist_Head("Database",Icons.bubble_chart),

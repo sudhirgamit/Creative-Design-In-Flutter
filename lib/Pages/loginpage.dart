@@ -1,10 +1,10 @@
 import 'dart:io';
-
 import 'package:creativedesign/Pages/homepage.dart';
 import 'package:creativedesign/Pages/registerpage.dart';
 import 'package:creativedesign/Utils/constants.dart';
 import 'package:creativedesign/card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -79,6 +79,9 @@ class _LoginPageState extends State<LoginPage> {
   }
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp
+    ]);
     return WillPopScope(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -277,7 +280,8 @@ class _LoginPageState extends State<LoginPage> {
                                                   blurRadius: 5
                                               )]
                                           ),
-                                          child: IconButton(alignment: Alignment.center,
+                                          child: IconButton(
+                                            alignment: Alignment.center,
                                             icon: Icon(
                                               Icons.trending_flat,
                                               size: 30,color: Colors.white,

@@ -46,6 +46,7 @@ import 'package:creativedesign/Layouts/expandeds.dart';
 import 'package:creativedesign/Layouts/rows.dart';
 import 'package:creativedesign/Layouts/stacks.dart';
 import 'package:creativedesign/Layouts/wraps.dart';
+import 'package:creativedesign/Other_Widgets/dismissibles.dart';
 import 'package:creativedesign/Packege/contact_list.dart';
 import 'package:creativedesign/Pages/dashboard.dart';
 import 'package:creativedesign/Pages/future_builder.dart';
@@ -53,6 +54,9 @@ import 'package:creativedesign/Pages/future_data.dart';
 import 'package:creativedesign/Pages/homepage.dart';
 import 'package:creativedesign/Pages/loginpage.dart';
 import 'package:creativedesign/Pages/stream_builder.dart';
+import 'package:creativedesign/Plugins/flutter_slidables.dart';
+import 'package:creativedesign/Plugins/shared_preferenceses.dart';
+import 'package:creativedesign/Plugins/url_launchers.dart';
 import 'package:creativedesign/Utils/constants.dart';
 import 'package:creativedesign/Widgets/aligns.dart';
 import 'package:creativedesign/Widgets/button_box.dart';
@@ -71,11 +75,15 @@ import 'package:creativedesign/card.dart';
 import 'package:creativedesign/container.dart';
 import 'package:flutter/material.dart';
 import 'package:creativedesign/drawer.dart';
+import 'package:flutter/services.dart';
 
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp
+    ]);
     return LayoutBuilder(
       builder: (BuildContext context,BoxConstraints view){
         return MaterialApp(
@@ -163,7 +171,15 @@ class MyApp extends StatelessWidget {
 
             // Advance Widgets
             // Plugins
-            "/animations": (context)=>Cupertino_ActionSheet(),
+            "/shared_pref": (context)=>Shared_Preferenceses(),
+            "/url_launch": (context)=>URL_Launchers(),
+            "/flut_slidable": (context)=>Flutter_Slidables(),
+            // Animations
+            // Multimedia
+            // Socialmedia
+            // Database
+            // Other Widgets
+            "/dismissible": (context)=>Dismissibles(),
           },
         );
       },

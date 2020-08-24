@@ -1,5 +1,6 @@
 import 'package:creativedesign/Pages/loginpage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -34,6 +35,9 @@ class _RegisterPageState extends State<RegisterPage> {
   final _scaffoldkey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp
+    ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Regsiter",
