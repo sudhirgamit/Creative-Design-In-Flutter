@@ -69,7 +69,8 @@ class _AdvanceState extends State<Advance> {
             padding: const EdgeInsets.all(8.0),
             child: ListView(
               children: <Widget>[
-                Cardlist_Animations_Dialog("SharedPreferences","Center, Form, Column, Form, TextFormField, SharedPreferences",Icons.store),
+                Cardlist_Animations_Dialog("Animated Text Kit","Colorize, Fade, Typer, Typewriter, Scale, AnimatedTextKit",Icons.kitchen),
+                Cardlist_Animations_Dialog("Loading Animation","ListView",Icons.hourglass_empty),
               ],
             ),
           ),
@@ -183,10 +184,10 @@ class _AdvanceState extends State<Advance> {
         subtitle: Text(subtitle),
         trailing: Icon(Icons.slideshow,color: Colors.black),
         onTap: (){
-          if(title=="SharedPreferences"){
-            Navigator.pushReplacementNamed(context, "/shared_pref");
-          }else if(title=="URL Launcher"){
-            Navigator.pushReplacementNamed(context, "/url_launch");
+          if(title=="Animated Text Kit"){
+            Navigator.pushReplacementNamed(context, "/anim_text_kit");
+          }else if(title=="Loading Animation"){
+            Navigator.pushReplacementNamed(context, "/loading_anim");
           }
         },
       ),

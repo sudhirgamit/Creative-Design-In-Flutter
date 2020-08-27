@@ -51,7 +51,7 @@ class Dismissibles extends StatefulWidget {
 }
 class _DismissiblesState extends State<Dismissibles> {
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
-  final items = List<String>.generate(5, (i)=>"Items "); // Items with (i)Value
+  final items = List<String>.generate(5, (i)=>"Items "); // Items With i values
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,12 +97,13 @@ class _DismissiblesState extends State<Dismissibles> {
                 padding: EdgeInsets.only(left: 10),
                 child: Row(
                   children: <Widget>[
-                    Icon(
-                      CupertinoIcons.search,color: CupertinoColors.white,size: 40,
-                    ),
-                    VerticalDivider(color: Colors.white,thickness: 1.5,indent: 10,endIndent: 10,),
-                    Icon(
-                        CupertinoIcons.double_music_note,color: CupertinoColors.white,size: 40,
+                    Container(
+                      color: Colors.red,
+                      height: MediaQuery.of(context).size.height,
+                      width: 100,
+                      child: Icon(
+                        CupertinoIcons.delete_simple,color: CupertinoColors.white,size: 40,
+                      ),
                     ),
                   ],
                 ),
@@ -110,7 +111,7 @@ class _DismissiblesState extends State<Dismissibles> {
               movementDuration: Duration(seconds: 10),
               resizeDuration: Duration(seconds: 2),
               secondaryBackground: Container(
-                color: Colors.green,
+                color: Colors.black12,
               ),
               onDismissed: (direction){
                 setState(() {

@@ -1,3 +1,5 @@
+import 'package:creativedesign/Advance_Animation/animated_text_kits.dart';
+import 'package:creativedesign/Advance_Animation/loading_animations.dart';
 import 'package:creativedesign/Animation/animated_align.dart';
 import 'package:creativedesign/Animation/animated_builder.dart';
 import 'package:creativedesign/Animation/animated_container.dart';
@@ -174,7 +176,9 @@ class MyApp extends StatelessWidget {
             "/shared_pref": (context)=>Shared_Preferenceses(),
             "/url_launch": (context)=>URL_Launchers(),
             "/flut_slidable": (context)=>Flutter_Slidables(),
-            // Animations
+            // Advance Animations
+            "/anim_text_kit": (context)=>Animated_Text_Kits(),
+            "/loading_anim": (context)=>Loading_Animations(),
             // Multimedia
             // Socialmedia
             // Database
