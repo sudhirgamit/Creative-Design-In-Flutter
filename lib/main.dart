@@ -13,6 +13,7 @@ import 'package:creativedesign/Animation/animated_positioned.dart';
 import 'package:creativedesign/Animation/animated_size.dart';
 import 'package:creativedesign/Animation/animated_switcher.dart';
 import 'package:creativedesign/Animation/animated_textstyle.dart';
+import 'package:creativedesign/AppBar/bottom_appbar.dart';
 import 'package:creativedesign/AppBar/custom_appbar.dart';
 import 'package:creativedesign/AppBar/simple_appbar.dart';
 import 'package:creativedesign/AppBar/sliver_appbar.dart';
@@ -119,6 +120,7 @@ class MyApp extends StatelessWidget {
             "/simpleAB": (context)=>Simple_AppBar(),
             "/sliverAB": (context)=>Sliver_AppBar(),
             "/customAB": (context)=>Custom_AppBar(),
+            "/bottomAB": (context)=>Bottom_Appbar(),
             // Navigation
             "/dialog": (context)=>Dialog_Box(),
             "/tabs": (context)=>Tabs(),

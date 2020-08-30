@@ -116,6 +116,7 @@ class _HomePageState extends State<HomePage> {
                 Cardlist_AppBar_Dialog("Simple AppBar","Center, Column, IconButton, Simple AppBar",Icons.apps),
                 Cardlist_AppBar_Dialog("Sliver AppBar","Center, Column, IconButton, Sliver AppBar",Icons.view_headline),
                 Cardlist_AppBar_Dialog("Custom AppBar","Center, Column, IconButton, Custom AppBar",Icons.crop_5_4),
+                Cardlist_AppBar_Dialog("Bottom AppBar","SafeArea, Center, Column, IconButton, Bottom AppBar",Icons.vertical_align_bottom),
               ],
             ),
           ),
@@ -381,6 +382,8 @@ class _HomePageState extends State<HomePage> {
             Navigator.pushReplacementNamed(context, "/sliverAB");
           }else if(title=="Custom AppBar"){
             Navigator.pushReplacementNamed(context, "/customAB");
+          }else if(title=="Bottom AppBar"){
+            Navigator.pushReplacementNamed(context, "/bottomAB");
           }
         },
       ),
