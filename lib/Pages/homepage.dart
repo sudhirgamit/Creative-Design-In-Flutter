@@ -116,7 +116,8 @@ class _HomePageState extends State<HomePage> {
                 Cardlist_AppBar_Dialog("Simple AppBar","Center, Column, IconButton, Simple AppBar",Icons.apps),
                 Cardlist_AppBar_Dialog("Sliver AppBar","Center, Column, IconButton, Sliver AppBar",Icons.view_headline),
                 Cardlist_AppBar_Dialog("Custom AppBar","Center, Column, IconButton, Custom AppBar",Icons.crop_5_4),
-                Cardlist_AppBar_Dialog("Bottom AppBar","SafeArea, Center, Column, IconButton, Bottom AppBar",Icons.vertical_align_bottom),
+                Cardlist_AppBar_Dialog("Bottom AppBar","SafeArea, Center, Column, Banner, ButtonBar, Baseline, ClipOval, ClipRect, ClipRRect, ClipPath, Bottom AppBar",Icons.keyboard_capslock),
+                Cardlist_AppBar_Dialog("Search Bar","Center, Column, IconButton, Search Bar",Icons.search),
               ],
             ),
           ),
@@ -384,6 +385,8 @@ class _HomePageState extends State<HomePage> {
             Navigator.pushReplacementNamed(context, "/customAB");
           }else if(title=="Bottom AppBar"){
             Navigator.pushReplacementNamed(context, "/bottomAB");
+          }else if(title=="Search Bar"){
+            Navigator.pushReplacementNamed(context, "/searchBar");
           }
         },
       ),

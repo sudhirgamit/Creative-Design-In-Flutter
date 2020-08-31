@@ -15,6 +15,7 @@ import 'package:creativedesign/Animation/animated_switcher.dart';
 import 'package:creativedesign/Animation/animated_textstyle.dart';
 import 'package:creativedesign/AppBar/bottom_appbar.dart';
 import 'package:creativedesign/AppBar/custom_appbar.dart';
+import 'package:creativedesign/AppBar/search_bar.dart';
 import 'package:creativedesign/AppBar/simple_appbar.dart';
 import 'package:creativedesign/AppBar/sliver_appbar.dart';
 import 'package:creativedesign/Async/future_builders.dart';
@@ -121,6 +122,7 @@ class MyApp extends StatelessWidget {
             "/sliverAB": (context)=>Sliver_AppBar(),
             "/customAB": (context)=>Custom_AppBar(),
             "/bottomAB": (context)=>Bottom_Appbar(),
+            "/searchBar": (context)=>Search_Bar(),
             // Navigation
             "/dialog": (context)=>Dialog_Box(),
             "/tabs": (context)=>Tabs(),
