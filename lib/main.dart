@@ -30,6 +30,8 @@ import 'package:creativedesign/Cupertino/cupertino_datepicker.dart';
 import 'package:creativedesign/Cupertino/cupertino_others.dart';
 import 'package:creativedesign/Cupertino/cupertino_slivernavbar.dart';
 import 'package:creativedesign/Cupertino/cupertino_timepicker.dart';
+import 'package:creativedesign/Database/mysql_database.dart';
+import 'package:creativedesign/Database/sqlite_database.dart';
 import 'package:creativedesign/Lists/expansion_tile.dart';
 import 'package:creativedesign/Lists/gridviews.dart';
 import 'package:creativedesign/Lists/listviews.dart';
@@ -97,7 +99,8 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.blueGrey,
               appBarTheme: AppBarTheme(color: Colors.transparent),
               textTheme: TextTheme(title: TextStyle(color: Colors.black)),
-              primaryIconTheme: IconThemeData(color: Colors.black)
+              primaryIconTheme: IconThemeData(color: Colors.black),
+              floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: Colors.cyan,elevation: 5.0)
           ),
           home: Constants.prefs.getBool("LoggedIn") == true ? Dashboard() : LoginPage(),
           routes: {
@@ -186,6 +189,8 @@ class MyApp extends StatelessWidget {
             // Multimedia
             // Socialmedia
             // Database
+            "/mysql_db": (context)=>MySQL_Database(),
+            "/sqlite_db": (context)=>SQLite_Database(),
             // Other Widgets
             "/dismissible": (context)=>Dismissibles(),
           },

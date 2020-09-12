@@ -14,7 +14,7 @@ class _AdvanceState extends State<Advance> {
     return Card(
       elevation: 5.0,
       child: ListTile(
-        contentPadding: EdgeInsets.all(13),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
         onTap: (){
           if(title=="Plugins"){
             _showModelButtomSheet_Plugins(context);
@@ -127,7 +127,8 @@ class _AdvanceState extends State<Advance> {
             padding: const EdgeInsets.all(8.0),
             child: ListView(
               children: <Widget>[
-                Cardlist_Database_Dialog("SharedPreferences","Center, Form, Column, Form, TextFormField, SharedPreferences",Icons.store),
+                Cardlist_Database_Dialog("MySQL Database","ListView Builder, ListTile, TextField, RaisedButton",Icons.rss_feed),
+                Cardlist_Database_Dialog("SQLite Database","ListView Builder, ListTile, TextField, RaisedButton",Icons.crop_square),
               ],
             ),
           ),
@@ -241,10 +242,10 @@ class _AdvanceState extends State<Advance> {
         subtitle: Text(subtitle),
         trailing: Icon(Icons.slideshow,color: Colors.black),
         onTap: (){
-          if(title=="SharedPreferences"){
-            Navigator.pushReplacementNamed(context, "/shared_pref");
-          }else if(title=="URL Launcher"){
-            Navigator.pushReplacementNamed(context, "/url_launch");
+          if(title=="MySQL Database"){
+            Navigator.pushReplacementNamed(context, "/mysql_db");
+          }else if(title=="SQLite Database"){
+            Navigator.pushReplacementNamed(context, "/sqlite_db");
           }
         },
       ),

@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                 Cardlist_AppBar_Dialog("Sliver AppBar","Center, Column, IconButton, Sliver AppBar",Icons.view_headline),
                 Cardlist_AppBar_Dialog("Custom AppBar","Center, Column, IconButton, Custom AppBar",Icons.crop_5_4),
                 Cardlist_AppBar_Dialog("Bottom AppBar","SafeArea, Center, Column, Banner, ButtonBar, Baseline, ClipOval, ClipRect, ClipRRect, ClipPath, Bottom AppBar",Icons.keyboard_capslock),
-                Cardlist_AppBar_Dialog("Search Bar","Center, Column, IconButton, Search Bar",Icons.search),
+                Cardlist_AppBar_Dialog("Search Bar","ListView Builder, ListTile, IconButton, Search Bar",Icons.search),
               ],
             ),
           ),
@@ -300,6 +300,7 @@ class _HomePageState extends State<HomePage> {
     return Card(
       elevation: 5.0,
       child: ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
         onTap: (){
           if(title=="Widgets"){
             _showModelButtomSheet_Widgets(context);
