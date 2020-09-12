@@ -6,7 +6,6 @@ class Columns extends StatefulWidget {
   @override
   _ColumnsState createState() => _ColumnsState();
 }
-
 class _ColumnsState extends State<Columns> {
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
   MainAxisSize _mainAxisSize = MainAxisSize.max;

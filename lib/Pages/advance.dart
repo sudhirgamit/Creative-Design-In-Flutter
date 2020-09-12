@@ -127,8 +127,8 @@ class _AdvanceState extends State<Advance> {
             padding: const EdgeInsets.all(8.0),
             child: ListView(
               children: <Widget>[
-                Cardlist_Database_Dialog("MySQL Database","ListView Builder, ListTile, TextField, RaisedButton",Icons.rss_feed),
-                Cardlist_Database_Dialog("SQLite Database","ListView Builder, ListTile, TextField, RaisedButton",Icons.crop_square),
+                Cardlist_Database_Dialog("MySQL Database","Future Builder, TableData, DataColumn, DataRow, DataCell",Icons.rss_feed),
+                Cardlist_Database_Dialog("SQLite Database","Future Builder, TableData, DataColumn, DataRow, DataCell",Icons.crop_square),
               ],
             ),
           ),

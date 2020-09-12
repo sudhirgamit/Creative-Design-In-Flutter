@@ -32,6 +32,7 @@ import 'package:creativedesign/Cupertino/cupertino_slivernavbar.dart';
 import 'package:creativedesign/Cupertino/cupertino_timepicker.dart';
 import 'package:creativedesign/Database/mysql_database.dart';
 import 'package:creativedesign/Database/sqlite_database.dart';
+import 'package:creativedesign/Layouts/flexibles.dart';
 import 'package:creativedesign/Lists/expansion_tile.dart';
 import 'package:creativedesign/Lists/gridviews.dart';
 import 'package:creativedesign/Lists/listviews.dart';
@@ -140,6 +141,7 @@ class MyApp extends StatelessWidget {
             "/wraps": (context)=>Wraps(),
             "/expandeds": (context)=>Expandeds(),
             "/stacks": (context)=>Stacks(),
+            "/flexible": (context)=>Flexibles(),
             // Lists
             "/listviews": (context)=>ListViews(),
             "/gridviews": (context)=>GridViews(),

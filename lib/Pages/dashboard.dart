@@ -414,104 +414,116 @@ class _DashboardState extends State<Dashboard> {
                             alignment: AlignmentDirectional.center,
                             height: view.maxHeight-80,
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              //mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: <Widget>[
-                                Card(
-                                  elevation: 5.0,
-                                  child: ListTile(
-                                    contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
-                                    onTap: (){
-                                      setState(() {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Tutorials()));
-                                      });
-                                    },
-                                    leading: CircleAvatar(
-                                      maxRadius: 30,
-                                      child: Chip(
-                                        label: Text("F",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Colors.white,shadows: [Shadow(color: Colors.black,blurRadius: 7.0)]),),
+                                Flexible(
+                                  fit: FlexFit.tight,flex: 1,
+                                  child: Card(
+                                    elevation: 5.0,
+                                    child: ListTile(
+                                      contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+                                      onTap: (){
+                                        setState(() {
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Tutorials()));
+                                        });
+                                      },
+                                      leading: CircleAvatar(
+                                        maxRadius: 30,
+                                        child: Chip(
+                                          label: Text("F",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Colors.white,shadows: [Shadow(color: Colors.black,blurRadius: 7.0)]),),
+                                        ),
+                                        backgroundColor: Colors.blueGrey,
                                       ),
-                                      backgroundColor: Colors.blueGrey,
-                                    ),
-                                    trailing: Container(
-                                      height: 100,
-                                      width: 8,color: Colors.blueGrey,
-                                    ),
-                                    title: Container(
-                                      padding: EdgeInsets.symmetric(vertical: 25,),
-                                      child: Text("Flutter Tutorials ",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.w400,letterSpacing: 1)),
+                                      trailing: Container(
+                                        height: 100,
+                                        width: 8,color: Colors.blueGrey,
+                                      ),
+                                      title: Container(
+                                        padding: EdgeInsets.symmetric(vertical: 25,),
+                                        child: Text("Flutter Tutorials ",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.w400,letterSpacing: 1)),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                Card(
-                                  elevation: 5.0,
-                                  child: ListTile(
-                                    contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
-                                    onTap: (){
-                                      setState(() {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
-                                      });
-                                    },
-                                    leading: CircleAvatar(
-                                      maxRadius: 30,
-                                      child: Chip(
-                                        label: Text("B",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Colors.white,shadows: [Shadow(color: Colors.black,blurRadius: 7.0)]),),
+                                Flexible(
+                                  fit: FlexFit.tight,flex: 1,
+                                  child: Card(
+                                    elevation: 5.0,
+                                    child: ListTile(
+                                      contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+                                      onTap: (){
+                                        setState(() {
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                                        });
+                                      },
+                                      leading: CircleAvatar(
+                                        maxRadius: 30,
+                                        child: Chip(
+                                          label: Text("B",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Colors.white,shadows: [Shadow(color: Colors.black,blurRadius: 7.0)]),),
+                                        ),
+                                        backgroundColor: Colors.green,
                                       ),
-                                      backgroundColor: Colors.green,
-                                    ),
-                                    trailing: Container(
-                                      height: 100,
-                                      width: 8,color: Colors.green,
-                                    ),
-                                    title: Container(
-                                      padding: EdgeInsets.symmetric(vertical: 25,),
-                                      child: Text("Basic ",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.w400,letterSpacing: 1)),
+                                      trailing: Container(
+                                        height: 100,
+                                        width: 8,color: Colors.green,
+                                      ),
+                                      title: Container(
+                                        padding: EdgeInsets.symmetric(vertical: 25,),
+                                        child: Text("Basic ",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.w400,letterSpacing: 1)),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                Card(
-                                  elevation: 5.0,
-                                  child: ListTile(
-                                    contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
-                                    onTap: (){
-                                      setState(() {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Advance()));
-                                      });
-                                    },
-                                    leading: CircleAvatar(
-                                      maxRadius: 30,
-                                      child: Chip(
-                                        label: Text("A",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Colors.white,shadows: [Shadow(color: Colors.black,blurRadius: 7.0)]),),
+                                Flexible(
+                                  fit: FlexFit.tight,flex: 1,
+                                  child: Card(
+                                    elevation: 5.0,
+                                    child: ListTile(
+                                      contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+                                      onTap: (){
+                                        setState(() {
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Advance()));
+                                        });
+                                      },
+                                      leading: CircleAvatar(
+                                        maxRadius: 30,
+                                        child: Chip(
+                                          label: Text("A",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Colors.white,shadows: [Shadow(color: Colors.black,blurRadius: 7.0)]),),
+                                        ),
+                                        backgroundColor: Colors.blueAccent,
                                       ),
-                                      backgroundColor: Colors.blueAccent,
-                                    ),
-                                    trailing: Container(
-                                      height: 100,
-                                      width: 8,color: Colors.blueAccent,
-                                    ),
-                                    title: Container(
-                                      padding: EdgeInsets.symmetric(vertical: 25,),
-                                      child: Text("Advance ",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.w400,letterSpacing: 1),),
+                                      trailing: Container(
+                                        height: 100,
+                                        width: 8,color: Colors.blueAccent,
+                                      ),
+                                      title: Container(
+                                        padding: EdgeInsets.symmetric(vertical: 25,),
+                                        child: Text("Advance ",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.w400,letterSpacing: 1),),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                Card(
-                                  elevation: 5.0,
-                                  child: ListTile(
-                                    contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
-                                    leading: CircleAvatar(
-                                      maxRadius: 30,
-                                      child: Chip(
-                                        label: Text("C",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Colors.white,shadows: [Shadow(color: Colors.black,blurRadius: 7.0)]),),
+                                Flexible(
+                                  fit: FlexFit.tight,flex: 1,
+                                  child: Card(
+                                    elevation: 5.0,
+                                    child: ListTile(
+                                      contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+                                      leading: CircleAvatar(
+                                        maxRadius: 30,
+                                        child: Chip(
+                                          label: Text("C",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Colors.white,shadows: [Shadow(color: Colors.black,blurRadius: 7.0)]),),
+                                        ),
+                                        backgroundColor: Colors.teal,
                                       ),
-                                      backgroundColor: Colors.teal,
-                                    ),
-                                    trailing: Container(
-                                      height: 100,
-                                      width: 8,color: Colors.teal,
-                                    ),
-                                    title: Container(
-                                      padding: EdgeInsets.symmetric(vertical: 25,),
-                                      child: Text("Creative Design",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.w400,letterSpacing: 1),),
+                                      trailing: Container(
+                                        height: 100,
+                                        width: 8,color: Colors.teal,
+                                      ),
+                                      title: Container(
+                                        padding: EdgeInsets.symmetric(vertical: 25,),
+                                        child: Text("Creative Design",style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.w400,letterSpacing: 1),),
+                                      ),
                                     ),
                                   ),
                                 ),

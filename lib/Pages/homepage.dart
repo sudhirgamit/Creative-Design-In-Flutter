@@ -166,6 +166,7 @@ class _HomePageState extends State<HomePage> {
                 Cardlist_Layouts_Dialog("Wrap","Center, Wrap, Chip, CircleAvatar",Icons.wrap_text),
                 Cardlist_Layouts_Dialog("Expanded","SingleChildScrollView, Padding, Column, Row, Expanded",Icons.expand_less),
                 Cardlist_Layouts_Dialog("Stack","SingleChildScrollView, Padding, Column, Stack",Icons.settings_input_composite),
+                Cardlist_Layouts_Dialog("Flexible","Padding, Column, Flexible, Container",Icons.flare),
               ],
             ),
           ),
@@ -444,6 +445,8 @@ class _HomePageState extends State<HomePage> {
             Navigator.pushReplacementNamed(context, "/expandeds");
           }else if(title=="Stack"){
             Navigator.pushReplacementNamed(context, "/stacks");
+          }else if(title=="Flexible"){
+            Navigator.pushReplacementNamed(context, "/flexible");
           }
         },
       ),
