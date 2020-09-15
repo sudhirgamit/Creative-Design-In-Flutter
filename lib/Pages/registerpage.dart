@@ -32,7 +32,6 @@ class _RegisterPageState extends State<RegisterPage> {
     _passwordvalid = RegExp(r"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}").hasMatch(val);
     //print(_passwordvalid);
   }
-  final _scaffoldkey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -100,15 +99,17 @@ class _RegisterPageState extends State<RegisterPage> {
                               ],
                             ),
                             Positioned(
-                              left: 27,right: 0,top: 100,bottom: 0,
+                              left: 27,right: 0,top: view.maxHeight/7.5,bottom: 0,
                               child: Text("Sign up",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w700,fontSize: 30),),
                             ),
                             Positioned(
-                              left: 27,right: 0,top: 130,bottom: 0,
+                              left: 27,right: 0,top: view.maxHeight/5.5,bottom: 0,
                               child: Text("Create new account",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 18),),
                             ),
                             Container(
-                              padding: EdgeInsets.only(top: view.minHeight/3.7,left: 10),
+                              height: view.maxHeight,
+                              alignment: AlignmentDirectional.center,
+                              //padding: EdgeInsets.only(top: view.minHeight/3.6,left: 10),
                               child: SingleChildScrollView(
                                 child: Form(
                                   child: Padding(
@@ -202,88 +203,79 @@ class _RegisterPageState extends State<RegisterPage> {
                                               fontSize: 20,fontWeight: FontWeight.w700
                                           ),
                                         ),
-                                        SizedBox(height: 35,),
-                                        Row(
-                                          children: <Widget>[
-                                            Text("Sign up",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 30),),
-                                            SizedBox(width: view.minWidth/10),
-                                            Container(
-                                              width: 60,height: 60,
-                                              alignment: Alignment.center,
-                                              decoration: BoxDecoration(
-                                                  color: Colors.red,
-                                                  shape: BoxShape.circle,
-                                                  boxShadow: [BoxShadow(
-                                                      color: Colors.red,
-                                                      blurRadius: 5
-                                                  )]
-                                              ),
-                                              child: IconButton(alignment: Alignment.center,
-                                                onPressed: (){
-                                                  setState(() {
-                                                    _name.text.trimLeft().isEmpty ? _namevalid = false : _name.text.length >= 3 ? _namevalid = true : _namevalid = false;
-                                                    _email.text.trimLeft().isEmpty ? _emailvalid = false : _emailvalid = true;
-                                                    _password.text.trimLeft().isEmpty ? _passwordvalid = false : _password.text.length >= 8 ? _passwordvalid = true : _passwordvalid = false;
-
-                                                    if(_namevalid == true && _emailvalid == true && _passwordvalid == true){
-                                                      print("Successfully registration..!");
-//                                                _scaffoldkey.currentState.showSnackBar(
-//                                                  SnackBar(
-//                                                    content: Text("Successfully registration..!",style: TextStyle(color: Colors.white),),
-//                                                    action: SnackBarAction(label: "Ok",textColor: Colors.white,onPressed: (){},),
-//                                                    backgroundColor: Colors.green,
-//                                                    behavior: SnackBarBehavior.floating,
-//                                                    duration: Duration(seconds: 3),
-//                                                  ),
-//                                                );
-                                                    }else{
-                                                      print("Please try again for registration..!");
-//                                                _scaffoldkey.currentState.showSnackBar(
-//                                                  SnackBar(
-//                                                    content: Text("Please try again for registration..!",style: TextStyle(color: Colors.white),),
-//                                                    action: SnackBarAction(label: "Ok",textColor: Colors.white,onPressed: (){},),
-//                                                    backgroundColor: Colors.red,
-//                                                    behavior: SnackBarBehavior.floating,
-//                                                    duration: Duration(seconds: 3),
-//                                                  ),
-//                                                );
-                                                    }
-
-                                                  });
-                                                },
-                                                icon: Icon(
-                                                  Icons.trending_flat,
-                                                  size: 30,color: Colors.white,
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                        SizedBox(height: 30,),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.end,
-                                          children: <Widget>[
-                                            Text("Have an account? ",style: TextStyle(fontSize: 16,color: Colors.white),),
-                                            InkWell(
-                                                onTap:(){
-                                                  setState(() {
-                                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
-                                                  });} ,
-                                                child: Text(
-                                                  "Sign in",
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      color: Colors.black,
-                                                      fontWeight: FontWeight.w600
-                                                  ),
-                                                )
-                                            ),
-                                          ],
-                                        ),
                                       ],
                                     ),
                                   ),
                                 ),
+                              ),
+                            ),
+                            Container(
+                              height: view.maxHeight,
+                              alignment: AlignmentDirectional.bottomEnd,
+                              padding: EdgeInsets.only(left: 27,bottom: 100),
+                              child: Row(
+                                children: <Widget>[
+                                  Text("Sign up",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 30),),
+                                  SizedBox(width: view.minWidth/10),
+                                  Container(
+                                    width: 60,height: 60,
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        shape: BoxShape.circle,
+                                        boxShadow: [BoxShadow(
+                                            color: Colors.red,
+                                            blurRadius: 5
+                                        )]
+                                    ),
+                                    child: IconButton(alignment: Alignment.center,
+                                      onPressed: (){
+                                        setState(() {
+                                          _name.text.trimLeft().isEmpty ? _namevalid = false : _name.text.length >= 3 ? _namevalid = true : _namevalid = false;
+                                          _email.text.trimLeft().isEmpty ? _emailvalid = false : _emailvalid = true;
+                                          _password.text.trimLeft().isEmpty ? _passwordvalid = false : _password.text.length >= 8 ? _passwordvalid = true : _passwordvalid = false;
+
+                                          if(_namevalid == true && _emailvalid == true && _passwordvalid == true){
+                                            print("Successfully registration..!");
+                                          }else{
+                                            print("Please try again for registration..!");
+                                          }
+
+                                        });
+                                      },
+                                      icon: Icon(
+                                        Icons.trending_flat,
+                                        size: 30,color: Colors.white,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+
+                            Container(
+                              height: view.maxHeight,
+                              alignment: AlignmentDirectional.bottomEnd,
+                              padding: EdgeInsets.only(right: 15,bottom: 40),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: <Widget>[
+                                  Text("Have an account? ",style: TextStyle(fontSize: 16,color: Colors.white),),
+                                  InkWell(
+                                      onTap:(){
+                                        setState(() {
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                                        });} ,
+                                      child: Text(
+                                        "Sign in",
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w600
+                                        ),
+                                      )
+                                  ),
+                                ],
                               ),
                             ),
                           ],

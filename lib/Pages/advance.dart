@@ -70,7 +70,7 @@ class _AdvanceState extends State<Advance> {
             child: ListView(
               children: <Widget>[
                 Cardlist_Animations_Dialog("Animated Text Kit","Colorize, Fade, Typer, Typewriter, Scale, AnimatedTextKit",Icons.kitchen),
-                Cardlist_Animations_Dialog("Loading Animation","ListView",Icons.hourglass_empty),
+                Cardlist_Animations_Dialog("Loading Animation","ListView, Flapping, Bouncing Grid, Fading Line, Bumping Line, Bouncing Line, Double Flipping, Jumping Line, Rotating",Icons.hourglass_empty),
               ],
             ),
           ),
@@ -161,8 +161,9 @@ class _AdvanceState extends State<Advance> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="SharedPreferences"){
             Navigator.pushReplacementNamed(context, "/shared_pref");
@@ -182,8 +183,9 @@ class _AdvanceState extends State<Advance> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="Animated Text Kit"){
             Navigator.pushReplacementNamed(context, "/anim_text_kit");
@@ -201,8 +203,9 @@ class _AdvanceState extends State<Advance> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="SharedPreferences"){
             Navigator.pushReplacementNamed(context, "/shared_pref");
@@ -220,8 +223,9 @@ class _AdvanceState extends State<Advance> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="SharedPreferences"){
             Navigator.pushReplacementNamed(context, "/shared_pref");
@@ -239,8 +243,9 @@ class _AdvanceState extends State<Advance> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="MySQL Database"){
             Navigator.pushReplacementNamed(context, "/mysql_db");
@@ -258,8 +263,9 @@ class _AdvanceState extends State<Advance> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="Dismissible"){
             Navigator.pushReplacementNamed(context, "/dismissible");

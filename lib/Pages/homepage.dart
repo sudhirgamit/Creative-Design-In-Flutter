@@ -1,19 +1,6 @@
-import 'dart:convert';
 import 'dart:io';
 import 'package:creativedesign/Pages/dashboard.dart';
-import 'package:creativedesign/Pages/future_builder_data.dart';
-import 'package:creativedesign/Utils/constants.dart';
-import 'package:creativedesign/drawer.dart';
-import 'package:creativedesign/fetch_gridview.dart';
-import 'package:creativedesign/fetch_listview.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:creativedesign/card.dart';
-import 'package:creativedesign/container.dart';
-import 'package:creativedesign/drawer.dart';
-import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -335,9 +322,9 @@ class _HomePageState extends State<HomePage> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
-        //dense: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="Icon"){
             Navigator.pushReplacementNamed(context, "/icon");
@@ -375,9 +362,9 @@ class _HomePageState extends State<HomePage> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
-        //dense: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="Simple AppBar"){
             Navigator.pushReplacementNamed(context, "/simpleAB");
@@ -401,9 +388,9 @@ class _HomePageState extends State<HomePage> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
-        //dense: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="Dialog"){
             Navigator.pushReplacementNamed(context, "/dialog");
@@ -429,9 +416,9 @@ class _HomePageState extends State<HomePage> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
-        //dense: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="Container"){
             Navigator.pushReplacementNamed(context, "/containers");
@@ -459,9 +446,9 @@ class _HomePageState extends State<HomePage> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
-        //dense: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="ListView & ListTile"){
             Navigator.pushReplacementNamed(context, "/listviews");
@@ -483,9 +470,9 @@ class _HomePageState extends State<HomePage> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
-        //dense: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="ListView Builder"){
             Navigator.pushReplacementNamed(context, "/listviewB");
@@ -505,9 +492,9 @@ class _HomePageState extends State<HomePage> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
-        //dense: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="Camera"){
             Navigator.pushReplacementNamed(context, "/camera");
@@ -527,9 +514,9 @@ class _HomePageState extends State<HomePage> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
-        //dense: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="Animated Container"){
             Navigator.pushReplacementNamed(context, "/anim_container");
@@ -569,9 +556,9 @@ class _HomePageState extends State<HomePage> {
       child: ListTile(
         leading: Icon(icon,color: Colors.black),
         title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
-        subtitle: Text(subtitle),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
         trailing: Icon(Icons.slideshow,color: Colors.black),
-        //dense: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
           if(title=="CupertinoActionSheet"){
             Navigator.pushReplacementNamed(context, "/cup_actionsheet");

@@ -55,9 +55,9 @@ class _URL_LaunchersState extends State<URL_Launchers> {
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
   Future<void> share() async {
     await FlutterShare.share(
-        title: 'Cake Shop',
-        text: 'Discount Offer Of Cake Shop',
-        linkUrl: 'https://play.google.com/store/apps/details?id=com.galaxytechnologies.cake_shop&hl=en_IN',
+        title: 'Creative Design In Flutter',
+        text: 'This application is make to education purpose for basic,advance and creative design widgets to mobile app developing in flutter.',
+        linkUrl: 'https://play.google.com/store/apps/details?id=com.technology.creativedesign&hl=en_IN',
         chooserTitle: 'Share'
     );
   }

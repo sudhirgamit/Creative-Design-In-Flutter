@@ -1,8 +1,6 @@
 import 'dart:io';
-import 'package:creativedesign/Pages/homepage.dart';
 import 'package:creativedesign/Pages/registerpage.dart';
 import 'package:creativedesign/Utils/constants.dart';
-import 'package:creativedesign/card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -12,7 +10,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController _name = new TextEditingController();
   String checkname="";  String checkemail=""; String checkpassword="";
 
   TextEditingController _email = new TextEditingController();
@@ -148,11 +145,11 @@ class _LoginPageState extends State<LoginPage> {
                               ),
 
                               Positioned(
-                                left: 27,right: 0,top: 100,bottom: 0,
+                                left: 27,right: 0,top: view.maxHeight/7.5,bottom: 0,
                                 child: Text("Sign in",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w700,fontSize: 30),),
                               ),
                               Positioned(
-                                left: 27,right: 0,top: 130,bottom: 0,
+                                left: 27,right: 0,top: view.maxHeight/5.5,bottom: 0,
                                 child: Text("Sign in to continue",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 18),),
                               ),
                               Container(
@@ -176,7 +173,9 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.only(top: view.minHeight/3,left: 10),
+                                height: view.maxHeight,
+                                alignment: AlignmentDirectional.center,
+                                //padding: EdgeInsets.only(top: view.minHeight/3,left: 10),
                                 child: SingleChildScrollView(
                                   child: Form(
                                     child: Padding(
@@ -243,91 +242,79 @@ class _LoginPageState extends State<LoginPage> {
                                                 fontSize: 20,fontWeight: FontWeight.w700
                                             ),
                                           ),
-                                          SizedBox(height: 50,),
-                                          Row(
-                                            children: <Widget>[
-                                              Text("Login",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 30),),
-                                              SizedBox(width: view.minWidth/4.5,),
-                                              _emailvalid==true  && _passwordvalid==true ?
-                                              Container(
-                                                width: 60,height: 60,
-                                                alignment: Alignment.center,
-                                                decoration: BoxDecoration(
-                                                    color: Colors.red,
-                                                    shape: BoxShape.circle,
-                                                    boxShadow: [BoxShadow(
-                                                        color: Colors.red,
-                                                        blurRadius: 5
-                                                    )]
-                                                ),
-                                                child: IconButton(alignment: Alignment.center,
-                                                  onPressed: (){
-                                                    setState(() {
-                                                      //Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
-                                                      _email.text.trimLeft().isEmpty ? _emailvalid = false : _emailvalid = true;
-                                                      _password.text.trimLeft().isEmpty ? _passwordvalid = false : _password.text.length >= 8 ? _passwordvalid = true : _passwordvalid = false;
-
-                                                      if(_emailvalid == true && _passwordvalid == true){
-                                                        Constants.prefs.setBool("LoggedIn", true);
-                                                        Constants.prefs.setString("Name", "Sudhir Gamit");
-                                                        Constants.prefs.setString("Email", _email.text);
-                                                        Navigator.pushReplacementNamed(context, "/dashboard");
-                                                      }
-
-                                                    });
-                                                  },
-                                                  icon: Icon(
-                                                    Icons.trending_flat,
-                                                    size: 30,color: Colors.white,
-                                                  ),
-                                                ),
-                                              ) :
-                                              Container(
-                                                width: 60,height: 60,
-                                                alignment: Alignment.center,
-                                                decoration: BoxDecoration(
-                                                    color: Colors.grey,
-                                                    shape: BoxShape.circle,
-                                                    boxShadow: [BoxShadow(
-                                                        color: Colors.grey,
-                                                        blurRadius: 5
-                                                    )]
-                                                ),
-                                                child: IconButton(
-                                                  alignment: Alignment.center,
-                                                  icon: Icon(
-                                                    Icons.trending_flat,
-                                                    size: 30,color: Colors.white,
-                                                  ),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                          SizedBox(height: 50,),
-                                          Row(
-                                            mainAxisAlignment: MainAxisAlignment.end,
-                                            children: <Widget>[
-                                              Text("Don't have an account? ",style: TextStyle(fontSize: 16,color: Colors.white),),
-                                              InkWell(
-                                                  onTap:(){
-                                                    setState(() {
-                                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterPage()));
-                                                    });} ,
-                                                  child: Text(
-                                                    "Sign up",
-                                                    style: TextStyle(
-                                                        fontSize: 18,
-                                                        color: Colors.black,
-                                                        fontWeight: FontWeight.w600
-                                                    ),
-                                                  )
-                                              ),
-                                            ],
-                                          ),
                                         ],
                                       ),
                                     ),
                                   ),
+                                ),
+                              ),
+                              Container(
+                                height: view.maxHeight,
+                                alignment: AlignmentDirectional.bottomEnd,
+                                padding: EdgeInsets.only(left: 27,bottom: view.minHeight <= 720 ? 100 : 160),
+                                child: Row(
+                                  children: <Widget>[
+                                    Text("Login",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 30),),
+                                    SizedBox(width: view.minWidth/7,),
+                                    Container(
+                                      width: 60,height: 60,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.red,
+                                          shape: BoxShape.circle,
+                                          boxShadow: [BoxShadow(
+                                              color: Colors.red,
+                                              blurRadius: 5
+                                          )]
+                                      ),
+                                      child: IconButton(alignment: Alignment.center,
+                                        onPressed: (){
+                                          setState(() {
+                                            //Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                                            _email.text.trimLeft().isEmpty ? _emailvalid = false : _emailvalid = true;
+                                            _password.text.trimLeft().isEmpty ? _passwordvalid = false : _password.text.length >= 8 ? _passwordvalid = true : _passwordvalid = false;
+
+                                            if(_emailvalid == true && _passwordvalid == true){
+                                              Constants.prefs.setBool("LoggedIn", true);
+                                              Constants.prefs.setString("Name", "Sudhir Gamit");
+                                              Constants.prefs.setString("Email", _email.text);
+                                              Navigator.pushReplacementNamed(context, "/dashboard");
+                                            }
+
+                                          });
+                                        },
+                                        icon: Icon(
+                                          Icons.trending_flat,
+                                          size: 30,color: Colors.white,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                height: view.maxHeight,
+                                alignment: AlignmentDirectional.bottomEnd,
+                                padding: EdgeInsets.only(right: 15,bottom: view.minHeight <= 720 ? 40 : 60),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: <Widget>[
+                                    Text("Don't have an account? ",style: TextStyle(fontSize: 16,color: Colors.white),),
+                                    InkWell(
+                                        onTap:(){
+                                          setState(() {
+                                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterPage()));
+                                          });} ,
+                                        child: Text(
+                                          "Sign up",
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w600
+                                          ),
+                                        )
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
