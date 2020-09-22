@@ -1,5 +1,6 @@
 import 'package:creativedesign/Advance_Animation/animated_text_kits.dart';
 import 'package:creativedesign/Advance_Animation/loading_animations.dart';
+import 'package:creativedesign/Advance_Multimedia/photo_filters.dart';
 import 'package:creativedesign/Animation/animated_align.dart';
 import 'package:creativedesign/Animation/animated_builder.dart';
 import 'package:creativedesign/Animation/animated_container.dart';
@@ -45,25 +46,27 @@ import 'package:creativedesign/Navigation/bottom_tabs.dart';
 import 'package:creativedesign/Navigation/navigation_drawer.dart';
 import 'package:creativedesign/Navigation/page_selecter.dart';
 import 'package:creativedesign/Navigation/tabs.dart';
-import 'package:creativedesign/Navigation_Codes/dialog_code.dart';
-import 'package:creativedesign/Codes/icon_code.dart';
 import 'package:creativedesign/Layouts/columns.dart';
 import 'package:creativedesign/Layouts/containers.dart';
 import 'package:creativedesign/Layouts/expandeds.dart';
 import 'package:creativedesign/Layouts/rows.dart';
 import 'package:creativedesign/Layouts/stacks.dart';
 import 'package:creativedesign/Layouts/wraps.dart';
+import 'package:creativedesign/Other_Widgets/categories.dart';
+import 'package:creativedesign/Other_Widgets/datatables.dart';
 import 'package:creativedesign/Other_Widgets/dismissibles.dart';
-import 'package:creativedesign/Packege/contact_list.dart';
+import 'package:creativedesign/Other_Widgets/refreshindicators.dart';
+import 'package:creativedesign/Other_Widgets/stepers.dart';
 import 'package:creativedesign/Pages/dashboard.dart';
-import 'package:creativedesign/Pages/future_builder.dart';
-import 'package:creativedesign/Pages/future_data.dart';
 import 'package:creativedesign/Pages/homepage.dart';
 import 'package:creativedesign/Pages/loginpage.dart';
-import 'package:creativedesign/Pages/stream_builder.dart';
+import 'package:creativedesign/Plugins/carousel_sliders.dart';
 import 'package:creativedesign/Plugins/flutter_slidables.dart';
 import 'package:creativedesign/Plugins/shared_preferenceses.dart';
 import 'package:creativedesign/Plugins/url_launchers.dart';
+import 'package:creativedesign/Socialmedia/connectivities.dart';
+import 'package:creativedesign/Socialmedia/facebook_signin.dart';
+import 'package:creativedesign/Socialmedia/google_signin.dart';
 import 'package:creativedesign/Utils/constants.dart';
 import 'package:creativedesign/Widgets/aligns.dart';
 import 'package:creativedesign/Widgets/button_box.dart';
@@ -78,10 +81,7 @@ import 'package:creativedesign/Widgets/text_box.dart';
 import 'package:creativedesign/Widgets/textfield_box.dart';
 import 'package:creativedesign/Widgets/textformfields.dart';
 import 'package:creativedesign/Widgets/textrich_box.dart';
-import 'package:creativedesign/card.dart';
-import 'package:creativedesign/container.dart';
 import 'package:flutter/material.dart';
-import 'package:creativedesign/drawer.dart';
 import 'package:flutter/services.dart';
 
 
@@ -185,16 +185,25 @@ class MyApp extends StatelessWidget {
             "/shared_pref": (context)=>Shared_Preferenceses(),
             "/url_launch": (context)=>URL_Launchers(),
             "/flut_slidable": (context)=>Flutter_Slidables(),
+            "/carousel_slider": (context)=>Carousel_Sliders(),
             // Advance Animations
             "/anim_text_kit": (context)=>Animated_Text_Kits(),
             "/loading_anim": (context)=>Loading_Animations(),
             // Multimedia
+            "/photofilter": (context)=>Photo_Filters(),
             // Socialmedia
+            "/connectivity": (context)=>Connectivities(),
+            "/google_signin": (context)=>Google_SignIn(),
+            "/facebook_signin": (context)=>Facebook_SignIn(),
             // Database
             "/mysql_db": (context)=>MySQL_Database(),
             "/sqlite_db": (context)=>SQLite_Database(),
             // Other Widgets
             "/dismissible": (context)=>Dismissibles(),
+            "/refresh": (context)=>RefreshIndicators(),
+            "/steper": (context)=>Stepers(),
+            "/datatable": (context)=>DataTables(),
+            "/categories": (context)=>Categories(),
           },
         );
       },

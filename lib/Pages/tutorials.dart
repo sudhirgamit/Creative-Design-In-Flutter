@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:creativedesign/Pages/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -14,6 +13,7 @@ class _TutorialsState extends State<Tutorials> {
   Widget CardExpansionTile(String num,String question,String answer){
     return Card(
       elevation: 5.0,
+      margin: EdgeInsets.symmetric(vertical: 8,horizontal: 5),
       child: ExpansionTile(
         leading: CircleAvatar(
           child: Text(num,style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600)),

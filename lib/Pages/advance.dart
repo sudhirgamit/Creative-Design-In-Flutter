@@ -51,6 +51,7 @@ class _AdvanceState extends State<Advance> {
                 Cardlist_Plugins_Dialog("SharedPreferences","Center, Form, Column, Form, TextFormField, SharedPreferences",Icons.store),
                 Cardlist_Plugins_Dialog("URL Launcher","Center, Column, Text, CupertinoButton, Launch",CupertinoIcons.share_up),
                 Cardlist_Plugins_Dialog("Flutter Slidable","ListView Builder, Dismissible, Container, Row, Icon",Icons.slow_motion_video),
+                Cardlist_Plugins_Dialog("Carousel_Slider","CarouselSilder Builder, CarouselSilder, Column, Container",Icons.compare_arrows),
               ],
             ),
           ),
@@ -89,7 +90,7 @@ class _AdvanceState extends State<Advance> {
             padding: const EdgeInsets.all(8.0),
             child: ListView(
               children: <Widget>[
-                Cardlist_Multimedia_Dialog("SharedPreferences","Center, Form, Column, Form, TextFormField, SharedPreferences",Icons.store),
+                Cardlist_Multimedia_Dialog("PhotoFilters","FloatingActionButton, Form, Column, Form, TextFormField, SharedPreferences",CupertinoIcons.photo_camera),
               ],
             ),
           ),
@@ -108,7 +109,9 @@ class _AdvanceState extends State<Advance> {
             padding: const EdgeInsets.all(8.0),
             child: ListView(
               children: <Widget>[
-                Cardlist_Socialmedia_Dialog("SharedPreferences","Center, Form, Column, Form, TextFormField, SharedPreferences",Icons.store),
+                Cardlist_Socialmedia_Dialog("Connectivity","FloatingActionButton, showDialog, AlertDialog",Icons.signal_cellular_connected_no_internet_4_bar),
+                Cardlist_Socialmedia_Dialog("Google SignIn","Center, CupertinoButton, Container, Text",Icons.assignment_turned_in),
+                Cardlist_Socialmedia_Dialog("Facebook SignIn","Center, CupertinoButton, Container, Text",Icons.tag_faces),
               ],
             ),
           ),
@@ -148,6 +151,10 @@ class _AdvanceState extends State<Advance> {
             child: ListView(
               children: <Widget>[
                 Cardlist_Other_Widgets_Dialog("Dismissible","ListView Builder, Dismissible, Container, Row, Icon",Icons.remove_from_queue),
+                Cardlist_Other_Widgets_Dialog("RefreshIndicator","ListView Builder, ListTile, Icon",Icons.refresh),
+                Cardlist_Other_Widgets_Dialog("Steper","Steper, Steps, Container, Button, Image Network",Icons.short_text),
+                Cardlist_Other_Widgets_Dialog("DataTable","DataTable, DataColumn, DataRow, DataCell",Icons.data_usage),
+                Cardlist_Other_Widgets_Dialog("Categories","SingleChildScrollView, ListView Builder, Container, Divider, NetworkImage",Icons.category),
               ],
             ),
           ),
@@ -171,6 +178,8 @@ class _AdvanceState extends State<Advance> {
             Navigator.pushReplacementNamed(context, "/url_launch");
           }else if(title=="Flutter Slidable"){
             Navigator.pushReplacementNamed(context, "/flut_slidable");
+          }else if(title=="Carousel_Slider"){
+            Navigator.pushReplacementNamed(context, "/carousel_slider");
           }
         },
       ),
@@ -207,10 +216,8 @@ class _AdvanceState extends State<Advance> {
         trailing: Icon(Icons.slideshow,color: Colors.black),
         contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
-          if(title=="SharedPreferences"){
-            Navigator.pushReplacementNamed(context, "/shared_pref");
-          }else if(title=="URL Launcher"){
-            Navigator.pushReplacementNamed(context, "/url_launch");
+          if(title=="PhotoFilters"){
+            Navigator.pushReplacementNamed(context, "/photofilter");
           }
         },
       ),
@@ -227,10 +234,12 @@ class _AdvanceState extends State<Advance> {
         trailing: Icon(Icons.slideshow,color: Colors.black),
         contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         onTap: (){
-          if(title=="SharedPreferences"){
-            Navigator.pushReplacementNamed(context, "/shared_pref");
-          }else if(title=="URL Launcher"){
-            Navigator.pushReplacementNamed(context, "/url_launch");
+          if(title=="Connectivity"){
+            Navigator.pushReplacementNamed(context, "/connectivity");
+          }else if(title=="Google SignIn"){
+            Navigator.pushReplacementNamed(context, "/google_signin");
+          }else if(title=="Facebook SignIn"){
+            Navigator.pushReplacementNamed(context, "/facebook_signin");
           }
         },
       ),
@@ -269,6 +278,14 @@ class _AdvanceState extends State<Advance> {
         onTap: (){
           if(title=="Dismissible"){
             Navigator.pushReplacementNamed(context, "/dismissible");
+          }else if(title=="RefreshIndicator"){
+            Navigator.pushReplacementNamed(context, "/refresh");
+          }else if(title=="Steper"){
+            Navigator.pushReplacementNamed(context, "/steper");
+          }else if(title=="DataTable"){
+            Navigator.pushReplacementNamed(context, "/datatable");
+          }else if(title=="Categories"){
+            Navigator.pushReplacementNamed(context, "/categories");
           }
         },
       ),
