@@ -1,5 +1,6 @@
 import 'package:creativedesign/Advance_Animation/loading_animations.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:widget_with_codeview/syntax_highlighter.dart';
 
 class Loading_Animations_Code extends StatelessWidget {
@@ -24,7 +25,7 @@ class Loading_Animations_Code extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             onPressed: (){
-              //launch("https://github.com/sudhirgamit/Creative-Design-In-Flutter/blob/master/lib/Animation/animated_align.dart");
+              launch("https://github.com/sudhirgamit/Creative-Design-In-Flutter/blob/master/lib/Advance_Animation/loading_animations.dart");
             },
             icon: Icon(Icons.share,size: 20,color: Colors.black),
           ),

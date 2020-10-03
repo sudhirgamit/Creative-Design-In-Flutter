@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:creativedesign/Pages/advance.dart';
+import 'package:creativedesign/Pages/creative_design.dart';
 import 'package:creativedesign/Pages/homepage.dart';
 import 'package:creativedesign/Pages/profile.dart';
 import 'package:creativedesign/Pages/tutorials.dart';
@@ -537,6 +538,11 @@ class _DashboardState extends State<Dashboard> {
                                     child: Center(
                                       child: ListTile(
                                         contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+                                        onTap: (){
+                                          setState(() {
+                                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Creative_Design()));
+                                          });
+                                        },
                                         leading: CircleAvatar(
                                           maxRadius: 30,
                                           child: Chip(

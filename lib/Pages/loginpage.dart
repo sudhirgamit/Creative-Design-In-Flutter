@@ -143,7 +143,6 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                 ],
                               ),
-
                               Positioned(
                                 left: 27,right: 0,top: view.maxHeight/7.5,bottom: 0,
                                 child: Text("Sign in",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w700,fontSize: 30),),

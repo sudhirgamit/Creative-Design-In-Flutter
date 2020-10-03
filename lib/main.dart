@@ -22,6 +22,14 @@ import 'package:creativedesign/AppBar/sliver_appbar.dart';
 import 'package:creativedesign/Async/future_builders.dart';
 import 'package:creativedesign/Async/listview_builders.dart';
 import 'package:creativedesign/Async/stream_builders.dart';
+import 'package:creativedesign/Authentication/login_1.dart';
+import 'package:creativedesign/Authentication/login_2.dart';
+import 'package:creativedesign/Authentication/login_3.dart';
+import 'package:creativedesign/Authentication/login_4.dart';
+import 'package:creativedesign/Authentication/signup_1.dart';
+import 'package:creativedesign/Authentication/signup_2.dart';
+import 'package:creativedesign/Authentication/signup_3.dart';
+import 'package:creativedesign/Authentication/signup_4.dart';
 import 'package:creativedesign/Cupertino/cupertino_actionsheet.dart';
 import 'package:creativedesign/Cupertino/cupertino_activityindicator.dart';
 import 'package:creativedesign/Cupertino/cupertino_alertdialog.dart';
@@ -64,6 +72,8 @@ import 'package:creativedesign/Plugins/carousel_sliders.dart';
 import 'package:creativedesign/Plugins/flutter_slidables.dart';
 import 'package:creativedesign/Plugins/shared_preferenceses.dart';
 import 'package:creativedesign/Plugins/url_launchers.dart';
+import 'package:creativedesign/Profiles/profile_1.dart';
+import 'package:creativedesign/Profiles/profile_2.dart';
 import 'package:creativedesign/Socialmedia/connectivities.dart';
 import 'package:creativedesign/Socialmedia/facebook_signin.dart';
 import 'package:creativedesign/Socialmedia/google_signin.dart';
@@ -204,6 +214,20 @@ class MyApp extends StatelessWidget {
             "/steper": (context)=>Stepers(),
             "/datatable": (context)=>DataTables(),
             "/categories": (context)=>Categories(),
+
+            // Creative Design
+            // Authentication
+            "/login_1": (context)=>Login_1(),
+            "/signup_1": (context)=>SignUp_1(),
+            "/login_2": (context)=>Login_2(),
+            "/signup_2": (context)=>SignUp_2(),
+            "/login_3": (context)=>Login_3(),
+            "/signup_3": (context)=>SignUp_3(),
+            "/login_4": (context)=>Login_4(),
+            "/signup_4": (context)=>SignUp_4(),
+            // Authentication
+            "/profile_1": (context)=>Profile_1(),
+            "/profile_2": (context)=>Profile_2(),
           },
         );
       },
