@@ -74,6 +74,7 @@ import 'package:creativedesign/Plugins/shared_preferenceses.dart';
 import 'package:creativedesign/Plugins/url_launchers.dart';
 import 'package:creativedesign/Profiles/profile_1.dart';
 import 'package:creativedesign/Profiles/profile_2.dart';
+import 'package:creativedesign/Profiles/profile_3.dart';
 import 'package:creativedesign/Socialmedia/connectivities.dart';
 import 'package:creativedesign/Socialmedia/facebook_signin.dart';
 import 'package:creativedesign/Socialmedia/google_signin.dart';
@@ -228,6 +229,7 @@ class MyApp extends StatelessWidget {
             // Authentication
             "/profile_1": (context)=>Profile_1(),
             "/profile_2": (context)=>Profile_2(),
+            "/profile_3": (context)=>Profile_3(),
           },
         );
       },

@@ -84,6 +84,8 @@ class _Creative_DesignState extends State<Creative_Design> {
               //Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile_1_Code()));
             }else if(title=="Profile 2"){
               //Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile_2_Code()));
+            }else if(title=="Profile 3"){
+              //Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile_2_Code()));
             }
           },
           icon: Icon(Icons.android,color: Colors.teal),
@@ -94,6 +96,8 @@ class _Creative_DesignState extends State<Creative_Design> {
             Navigator.pushReplacementNamed(context, "/profile_1");
           }else if(title=="Profile 2"){
             Navigator.pushReplacementNamed(context, "/profile_2");
+          }else if(title=="Profile 3"){
+            Navigator.pushReplacementNamed(context, "/profile_3");
           }
         },
       ),
@@ -166,6 +170,7 @@ class _Creative_DesignState extends State<Creative_Design> {
               children: <Widget>[
                 Cardlist_Profile_Dialog("Profile 1","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_one),
                 Cardlist_Profile_Dialog("Profile 2","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_two),
+                Cardlist_Profile_Dialog("Profile 3","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_3),
               ],
             ),
           ),
