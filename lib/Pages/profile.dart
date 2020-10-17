@@ -169,8 +169,7 @@ class _ProfileState extends State<Profile> {
                             decoration: InputDecoration(
                                 labelText: "Name"
                             ),
-                          )
-                              : Text(name,style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15),),
+                          ): Text(name,style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15),),
                           trailing: editname ?
                           IconButton(
                             onPressed: (){
@@ -203,8 +202,7 @@ class _ProfileState extends State<Profile> {
                             decoration: InputDecoration(
                                 labelText: "Email"
                             ),
-                          )
-                              : Text(email,style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15),),
+                          ) : Text(email,style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15),),
                           trailing: editemail ?
                           IconButton(
                             onPressed: (){
@@ -237,8 +235,7 @@ class _ProfileState extends State<Profile> {
                             decoration: InputDecoration(
                                 labelText: "Mobile"
                             ),
-                          )
-                              : Text(mobile,style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15),),
+                          ) : Text(mobile,style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15),),
                           trailing: editmobile ?
                           IconButton(
                             onPressed: (){

@@ -1,5 +1,3 @@
-import 'package:creativedesign/Authentication/login_1.dart';
-import 'package:creativedesign/Authentication/signup_1.dart';
 import 'package:creativedesign/Authentication_Codes/login_1_code.dart';
 import 'package:creativedesign/Authentication_Codes/login_2_code.dart';
 import 'package:creativedesign/Authentication_Codes/login_3_code.dart';
@@ -9,6 +7,14 @@ import 'package:creativedesign/Authentication_Codes/signup_2_code.dart';
 import 'package:creativedesign/Authentication_Codes/signup_3_code.dart';
 import 'package:creativedesign/Authentication_Codes/signup_4_code.dart';
 import 'package:creativedesign/Pages/dashboard.dart';
+import 'package:creativedesign/Profiles_Codes/profile_1_code.dart';
+import 'package:creativedesign/Profiles_Codes/profile_2_code.dart';
+import 'package:creativedesign/Profiles_Codes/profile_3_code.dart';
+import 'package:creativedesign/Profiles_Codes/profile_4_code.dart';
+import 'package:creativedesign/Settings_Codes/setting_1_code.dart';
+import 'package:creativedesign/Settings_Codes/setting_2_code.dart';
+import 'package:creativedesign/Settings_Codes/setting_3_code.dart';
+import 'package:creativedesign/Settings_Codes/setting_4_code.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -81,11 +87,13 @@ class _Creative_DesignState extends State<Creative_Design> {
         trailing: IconButton(
           onPressed: (){
             if(title=="Profile 1"){
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile_1_Code()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile_1_Code()));
             }else if(title=="Profile 2"){
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile_2_Code()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile_2_Code()));
             }else if(title=="Profile 3"){
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile_2_Code()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile_3_Code()));
+            }else if(title=="Profile 4"){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile_4_Code()));
             }
           },
           icon: Icon(Icons.android,color: Colors.teal),
@@ -98,6 +106,45 @@ class _Creative_DesignState extends State<Creative_Design> {
             Navigator.pushReplacementNamed(context, "/profile_2");
           }else if(title=="Profile 3"){
             Navigator.pushReplacementNamed(context, "/profile_3");
+          }else if(title=="Profile 4"){
+            Navigator.pushReplacementNamed(context, "/profile_4");
+          }
+        },
+      ),
+    );
+  }
+
+  // Settings
+  Widget Cardlist_Setting_Dialog(String title,String subtitle,IconData icon){
+    return Card(
+      child: ListTile(
+        leading: Icon(icon,color: Colors.black),
+        title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
+        trailing: IconButton(
+          onPressed: (){
+            if(title=="Setting 1"){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Setting_1_Code()));
+            }else if(title=="Setting 2"){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Setting_2_Code()));
+            }else if(title=="Setting 3"){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Setting_3_Code()));
+            }else if(title=="Setting 4"){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Setting_4_Code()));
+            }
+          },
+          icon: Icon(Icons.android,color: Colors.teal),
+        ),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
+        onTap: (){
+          if(title=="Setting 1"){
+            Navigator.pushReplacementNamed(context, "/setting_1");
+          }else if(title=="Setting 2"){
+            Navigator.pushReplacementNamed(context, "/setting_2");
+          }else if(title=="Setting 3"){
+            Navigator.pushReplacementNamed(context, "/setting_3");
+          }else if(title=="Setting 4"){
+            Navigator.pushReplacementNamed(context, "/setting_4");
           }
         },
       ),
@@ -116,7 +163,7 @@ class _Creative_DesignState extends State<Creative_Design> {
           }else if(title=="Profiles"){
             _showModelButtomSheet_Profiles(context);
           }else if(title=="Settings"){
-            //_showModelButtomSheet_Multimedia(context);
+            _showModelButtomSheet_Settings(context);
           }else if(title=="E-Commerce"){
             //_showModelButtomSheet_Socialmedia(context);
           } else if(title=="Foods"){
@@ -171,6 +218,29 @@ class _Creative_DesignState extends State<Creative_Design> {
                 Cardlist_Profile_Dialog("Profile 1","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_one),
                 Cardlist_Profile_Dialog("Profile 2","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_two),
                 Cardlist_Profile_Dialog("Profile 3","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_3),
+                Cardlist_Profile_Dialog("Profile 4","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_4),
+              ],
+            ),
+          ),
+        )
+    );
+  }
+
+  // Buttom Sheet Settings
+  Widget _showModelButtomSheet_Settings(context){
+    showModalBottomSheet(
+        backgroundColor: Colors.transparent,
+        context: context,
+        builder: (BuildContext context)=>Card(
+          color: Colors.white70.withOpacity(0.7),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView(
+              children: <Widget>[
+                Cardlist_Setting_Dialog("Setting 1","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_one),
+                Cardlist_Setting_Dialog("Setting 2","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_two),
+                Cardlist_Setting_Dialog("Setting 3","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_3),
+                Cardlist_Setting_Dialog("Setting 4","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_4),
               ],
             ),
           ),

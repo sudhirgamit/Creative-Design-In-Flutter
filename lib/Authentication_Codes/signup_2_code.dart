@@ -91,7 +91,7 @@ class _SignUp_2State extends State<SignUp_2> {
                 ),
                 Container(
                   alignment: AlignmentDirectional.topStart,
-                  padding: EdgeInsets.only(left: 30,top: 50),
+                  padding: EdgeInsets.only(left: 30,top: MediaQuery.of(context).size.height/12),
                   child:  Text("Create Account",style: TextStyle(fontWeight: FontWeight.w700,color: Colors.white,fontSize: 40,letterSpacing: 1,shadows: [BoxShadow(color: Colors.red,blurRadius: 13)]),),
                 ),
                 Form(

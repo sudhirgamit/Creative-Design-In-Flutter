@@ -2,7 +2,6 @@ import 'package:creativedesign/Authentication/login_4.dart';
 import 'package:creativedesign/Pages/creative_design.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignUp_4 extends StatefulWidget {
   @override
@@ -25,16 +24,17 @@ class _SignUp_4State extends State<SignUp_4> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green,
-      body: Container(
-        width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Colors.lightGreen,Colors.green,Colors.lightGreen,]
+      body: SingleChildScrollView(
+        child: Container(
+          width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.lightGreen,Colors.green,Colors.lightGreen,]
+            ),
           ),
-        ),
-        child: SingleChildScrollView(
           child: SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.only(top: 20),
@@ -45,92 +45,96 @@ class _SignUp_4State extends State<SignUp_4> {
                       )
                   ),
                 ),
-                SizedBox(height: 20,),
                 Text("Sign Up",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w300,fontSize: 40),),
                 SizedBox(height: 20,),
-                Container(
-                    padding: EdgeInsets.symmetric(horizontal: 30),
-                    child: TextField(
-                      controller: _name,
-                      onChanged: (String value){
-                        setState(() {
-                          _nameRegValidation(value);
-                        });
-                      },
-                      maxLength: 10,
-                      style: TextStyle(
-                          color: _namevalid!=true ? Colors.red :Colors.white,
-                          fontSize: 20,fontWeight: FontWeight.w700
-                      ),
-                      decoration: InputDecoration(
-                          labelText: "Your Name",
-                          labelStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),
-                          counter: Container(),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: const BorderRadius.horizontal(
-                                  right: Radius.circular(30)),
-                              borderSide: BorderSide(color: Colors.white, width: 1.0)),
-                          errorText: _namevalid ? null : "Please enter a name.",
-                          prefixIcon: Icon(
-                            Icons.person,
-                            size: 25,color: Colors.white,
+                Column(
+                  children: <Widget>[
+                    Container(
+                        padding: EdgeInsets.symmetric(horizontal: 30),
+                        child: TextField(
+                          controller: _name,
+                          onChanged: (String value){
+                            setState(() {
+                              _nameRegValidation(value);
+                            });
+                          },
+                          maxLength: 10,
+                          style: TextStyle(
+                              color: _namevalid!=true ? Colors.red :Colors.white,
+                              fontSize: 20,fontWeight: FontWeight.w700
                           ),
-                          border: new OutlineInputBorder(
-                              borderRadius: const BorderRadius.horizontal(
-                                  right: Radius.circular(30)
+                          decoration: InputDecoration(
+                              labelText: "Your Name",
+                              labelStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),
+                              counter: Container(),
+                              fillColor: Colors.transparent,
+                              filled: true,
+                              contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: const BorderRadius.horizontal(
+                                      right: Radius.circular(30)),
+                                  borderSide: BorderSide(color: Colors.white, width: 1.0)),
+                              errorText: _namevalid ? null : "Please enter a name.",
+                              prefixIcon: Icon(
+                                Icons.person,
+                                size: 25,color: Colors.white,
+                              ),
+                              border: new OutlineInputBorder(
+                                  borderRadius: const BorderRadius.horizontal(
+                                      right: Radius.circular(30)
+                                  )
                               )
-                          )
-                      ),
-                      keyboardType: TextInputType.text,
-                    )
-                ),
-                SizedBox(height: 5,),
-                Container(
-                    padding: EdgeInsets.symmetric(horizontal: 30),
-                    child: TextField(
-                      controller: _mobile,
-                      onChanged: (String value){
-                        setState(() {
-                          _mobilevalidation(value);
-                        });
-                      },
-                      maxLength: 10,
-                      style: TextStyle(
-                          color: _mobilevalid!=true ? Colors.red :Colors.white,
-                          fontSize: 20,fontWeight: FontWeight.w700
-                      ),
-                      decoration: InputDecoration(
-                          labelText: "Mobile No",
-                          labelStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),
-                          counter: Container(),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: const BorderRadius.horizontal(
-                                  right: Radius.circular(30)),
-                              borderSide: BorderSide(color: Colors.white, width: 1.0)),
-                          errorText: _mobilevalid ? null : "Please enter a valid mobile.",
-                          prefixIcon: Icon(
-                            Icons.phone,
-                            size: 25,color: Colors.white,
                           ),
-                          prefixText: "+91 ",
-                          prefixStyle: TextStyle(
-                            color: Colors.white,fontSize: 20,
+                          keyboardType: TextInputType.text,
+                        )
+                    ),
+                    SizedBox(height: 5,),
+                    Container(
+                        padding: EdgeInsets.symmetric(horizontal: 30),
+                        child: TextField(
+                          controller: _mobile,
+                          onChanged: (String value){
+                            setState(() {
+                              _mobilevalidation(value);
+                            });
+                          },
+                          maxLength: 10,
+                          style: TextStyle(
+                              color: _mobilevalid!=true ? Colors.red :Colors.white,
+                              fontSize: 20,fontWeight: FontWeight.w700
                           ),
-                          border: new OutlineInputBorder(
-                              borderRadius: const BorderRadius.horizontal(
-                                  right: Radius.circular(30)
+                          decoration: InputDecoration(
+                              labelText: "Mobile No",
+                              labelStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),
+                              counter: Container(),
+                              fillColor: Colors.transparent,
+                              filled: true,
+                              contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: const BorderRadius.horizontal(
+                                      right: Radius.circular(30)),
+                                  borderSide: BorderSide(color: Colors.white, width: 1.0)),
+                              errorText: _mobilevalid ? null : "Please enter a valid mobile.",
+                              prefixIcon: Icon(
+                                Icons.phone,
+                                size: 25,color: Colors.white,
+                              ),
+                              prefixText: "+91 ",
+                              prefixStyle: TextStyle(
+                                color: Colors.white,fontSize: 20,
+                              ),
+                              border: new OutlineInputBorder(
+                                  borderRadius: const BorderRadius.horizontal(
+                                      right: Radius.circular(30)
+                                  )
                               )
-                          )
-                      ),
-                      keyboardType: TextInputType.phone,
-                    )
+                          ),
+                          keyboardType: TextInputType.phone,
+                        )
+                    ),
+                  ],
                 ),
+
                 SizedBox(height: 5,),
                 Container(
                   decoration: BoxDecoration(
@@ -174,7 +178,8 @@ class _SignUp_4State extends State<SignUp_4> {
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(50),bottomLeft: Radius.circular(50)),
                     ),
                   ],
-                )
+                ),
+                SizedBox(height: 10,),
               ],
             ),
           ),

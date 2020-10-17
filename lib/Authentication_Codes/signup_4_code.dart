@@ -44,7 +44,6 @@ import 'package:creativedesign/Authentication/login_4.dart';
 import 'package:creativedesign/Pages/creative_design.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignUp_4 extends StatefulWidget {
   @override
@@ -67,16 +66,17 @@ class _SignUp_4State extends State<SignUp_4> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green,
-      body: Container(
-        width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Colors.lightGreen,Colors.green,Colors.lightGreen,]
+      body: SingleChildScrollView(
+        child: Container(
+          width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.lightGreen,Colors.green,Colors.lightGreen,]
+            ),
           ),
-        ),
-        child: SingleChildScrollView(
           child: SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.only(top: 20),
@@ -87,7 +87,6 @@ class _SignUp_4State extends State<SignUp_4> {
                       )
                   ),
                 ),
-                SizedBox(height: 20,),
                 Text("Sign Up",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w300,fontSize: 40),),
                 SizedBox(height: 20,),
                 Container(
@@ -216,7 +215,8 @@ class _SignUp_4State extends State<SignUp_4> {
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(50),bottomLeft: Radius.circular(50)),
                     ),
                   ],
-                )
+                ),
+                SizedBox(height: 10,),
               ],
             ),
           ),

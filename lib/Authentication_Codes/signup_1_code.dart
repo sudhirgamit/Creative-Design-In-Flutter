@@ -70,174 +70,186 @@ class _SignUp_1State extends State<SignUp_1> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey,
-      body: SingleChildScrollView(
-        child: SafeArea(
-            child: Column(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.only(left: 3),
-                      child: IconButton(
-                        onPressed: (){
-                          setState(() {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Creative_Design()));
-                          });
-                        },
-                        icon: Icon(Icons.arrow_back,color: Colors.white,size: 25,),
-                      ),
-                    ),
-                    Container(
-                        padding: EdgeInsets.only(right: 10),
-                        child: InkWell(
-                          onTap: (){
-                            setState(() {
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Login_1()));
-                            });
-                          },
-                          child: Text("Log in",
-                            style: TextStyle(fontWeight: FontWeight.w400,color: Colors.white,fontSize: 20),),
-                        )
-                    ),
-                  ],
-                ),
-                SizedBox(height: 25,),
-                Container(
+      body: SafeArea(
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: SingleChildScrollView(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text("Create your",
-                          style: TextStyle(fontWeight: FontWeight.w700,color: Colors.white,fontSize: 35)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Container(
+                            padding: EdgeInsets.only(left: 3),
+                            child: IconButton(
+                              onPressed: (){
+                                setState(() {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Creative_Design()));
+                                });
+                              },
+                              icon: Icon(Icons.arrow_back,color: Colors.white,size: 25,),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(right: 10),
+                            child: MaterialButton(
+                              onPressed: (){
+                                setState(() {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Login_1()));
+                                });
+                              },
+                              child: Text("Log in", style: TextStyle(fontWeight: FontWeight.w400,color: Colors.white,fontSize: 25),),
+                            ),
+                          ),
+                        ],
                       ),
-                      Text("account",
-                          style: TextStyle(fontWeight: FontWeight.w700,color: Colors.white,fontSize: 35)
+                      SizedBox(height: 30,),
+                      Container(
+                        child: Column(
+                          children: <Widget>[
+                            Text("Create your",
+                                style: TextStyle(fontWeight: FontWeight.w700,color: Colors.white,fontSize: 35)
+                            ),
+                            Text("account",
+                                style: TextStyle(fontWeight: FontWeight.w700,color: Colors.white,fontSize: 35)
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 30,),
-                Form(
-                  child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 25),
-                      child: Column(
-                        children: <Widget>[
-                          TextField(
-                            onChanged: (String value){
-                              setState(() {
-                                _namevalidation(value);
-                                checkname=value;
-                              });
-                            },
-                            controller: _name,
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                                hintText: "Your name",
-                                hintStyle: TextStyle(color: Colors.white,fontSize: 18),
-                                prefix: Text("    "),
-                                errorText: _namevalid!=true ? "Enter valid name" : "",
-                                border: OutlineInputBorder( borderRadius: BorderRadius.all(Radius.circular(50))),
-                                errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid),
-                                    borderRadius: BorderRadius.all(Radius.circular(50))
-                                ),
-                                focusedErrorBorder: _namevalid!=true ?
-                                OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.red,width: 1.5,style: BorderStyle.solid)):
-                                OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid))
+              ),
+              SizedBox(height: 30,),
+              Expanded(
+                flex: 2,
+                child: SingleChildScrollView(
+                  child: Form(
+                    child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25),
+                        child: Column(
+                          children: <Widget>[
+                            TextField(
+                              onChanged: (String value){
+                                setState(() {
+                                  _namevalidation(value);
+                                  checkname=value;
+                                });
+                              },
+                              controller: _name,
+                              keyboardType: TextInputType.text,
+                              decoration: InputDecoration(
+                                  hintText: "Your name",
+                                  hintStyle: TextStyle(color: Colors.white,fontSize: 18),
+                                  prefix: Text("    "),
+                                  errorText: _namevalid!=true ? "Enter valid name" : "",
+                                  border: OutlineInputBorder( borderRadius: BorderRadius.all(Radius.circular(50))),
+                                  errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid),
+                                      borderRadius: BorderRadius.all(Radius.circular(50))
+                                  ),
+                                  focusedErrorBorder: _namevalid!=true ?
+                                  OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.red,width: 1.5,style: BorderStyle.solid)):
+                                  OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid))
+                              ),
+                              style: TextStyle(
+                                  color: _namevalid!=true ? Colors.red :Colors.white,
+                                  fontSize: 20,fontWeight: FontWeight.w700
+                              ),
                             ),
-                            style: TextStyle(
-                                color: _namevalid!=true ? Colors.red :Colors.white,
-                                fontSize: 20,fontWeight: FontWeight.w700
+                            SizedBox(height: 5,),
+                            TextField(
+                              onChanged: (String value){
+                                setState(() {
+                                  _emailvalidation(value);
+                                  checkemail=value;
+                                });
+                              },
+                              controller: _email,
+                              keyboardType: TextInputType.emailAddress,
+                              decoration: InputDecoration(
+                                  hintText: "Email",
+                                  hintStyle: TextStyle(color: Colors.white,fontSize: 18),
+                                  prefix: Text("    "),
+                                  errorText: _emailvalid!=true ? "Enter valid email id" : "",
+                                  border: OutlineInputBorder( borderRadius: BorderRadius.all(Radius.circular(50))),
+                                  errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid),
+                                      borderRadius: BorderRadius.all(Radius.circular(50))
+                                  ),
+                                  focusedErrorBorder: _emailvalid!=true ?
+                                  OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.red,width: 1.5,style: BorderStyle.solid)):
+                                  OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid))
+                              ),
+                              style: TextStyle(
+                                  color: _emailvalid!=true ? Colors.red :Colors.white,
+                                  fontSize: 20,fontWeight: FontWeight.w700
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 5,),
-                          TextField(
-                            onChanged: (String value){
-                              setState(() {
-                                _emailvalidation(value);
-                                checkemail=value;
-                              });
-                            },
-                            controller: _email,
-                            keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
-                                hintText: "Email",
-                                hintStyle: TextStyle(color: Colors.white,fontSize: 18),
-                                prefix: Text("    "),
-                                errorText: _emailvalid!=true ? "Enter valid email id" : "",
-                                border: OutlineInputBorder( borderRadius: BorderRadius.all(Radius.circular(50))),
-                                errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid),
-                                    borderRadius: BorderRadius.all(Radius.circular(50))
-                                ),
-                                focusedErrorBorder: _emailvalid!=true ?
-                                OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.red,width: 1.5,style: BorderStyle.solid)):
-                                OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid))
+                            SizedBox(height: 5,),
+                            TextField(
+                              onChanged: (String value){
+                                setState(() {
+                                  _passwordvalidation(value);
+                                  checkpassword=value;
+                                });
+                              },
+                              controller: _password,
+                              keyboardType: TextInputType.visiblePassword,
+                              obscureText: show_hide ? true :false,
+                              decoration: InputDecoration(
+                                  hintText: "Password",
+                                  hintStyle: TextStyle(color: Colors.white,fontSize: 18),
+                                  prefix: Text("    "),
+                                  errorText: _passwordvalid!=true ? "Enter valid password" : "",
+                                  suffixIcon: show_hide ? IconButton(icon: Icon(Icons.visibility_off,color: Colors.white,),onPressed: (){setState(() {show_hide=false;});},)
+                                      : IconButton(icon: Icon(Icons.visibility,color: Colors.white,),onPressed: (){setState(() {show_hide=true;});},),
+                                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50))),
+                                  errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid),
+                                      borderRadius: BorderRadius.all(Radius.circular(50))
+                                  ),
+                                  focusedErrorBorder: _passwordvalid!=true ?
+                                  OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.red,width: 1.5,style: BorderStyle.solid)):
+                                  OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid))
+                              ),
+                              style: TextStyle(
+                                  color: _passwordvalid!=true ? Colors.red :Colors.white,
+                                  fontSize: 20,fontWeight: FontWeight.w700
+                              ),
                             ),
-                            style: TextStyle(
-                                color: _emailvalid!=true ? Colors.red :Colors.white,
-                                fontSize: 20,fontWeight: FontWeight.w700
+                            SizedBox(height: 20,),
+                            CupertinoButton(
+                              onPressed: (){},
+                              color: Colors.lightGreen,
+                              child: Text("Join Us",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 20,letterSpacing: 1),),
+                              padding: EdgeInsets.symmetric(horizontal: 120,vertical: 22),
+                              borderRadius: BorderRadius.all(Radius.circular(50)),
                             ),
-                          ),
-                          SizedBox(height: 5,),
-                          TextField(
-                            onChanged: (String value){
-                              setState(() {
-                                _passwordvalidation(value);
-                                checkpassword=value;
-                              });
-                            },
-                            controller: _password,
-                            keyboardType: TextInputType.visiblePassword,
-                            obscureText: show_hide ? true :false,
-                            decoration: InputDecoration(
-                                hintText: "Password",
-                                hintStyle: TextStyle(color: Colors.white,fontSize: 18),
-                                prefix: Text("    "),
-                                errorText: _passwordvalid!=true ? "Enter valid password" : "",
-                                suffixIcon: show_hide ? IconButton(icon: Icon(Icons.visibility_off,color: Colors.white,),onPressed: (){setState(() {show_hide=false;});},)
-                                    : IconButton(icon: Icon(Icons.visibility,color: Colors.white,),onPressed: (){setState(() {show_hide=true;});},),
-                                border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50))),
-                                errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid),
-                                    borderRadius: BorderRadius.all(Radius.circular(50))
-                                ),
-                                focusedErrorBorder: _passwordvalid!=true ?
-                                OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.red,width: 1.5,style: BorderStyle.solid)):
-                                OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50)),borderSide: BorderSide(color: Colors.white,width: 1.5,style: BorderStyle.solid))
+                            SizedBox(height: 20,),
+                            Container(
+                              child: Column(
+                                children: <Widget>[
+                                  Text("By pressing \"Join Us\" you agree to",
+                                      style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white,fontSize: 12)
+                                  ),
+                                  Text("our terms & conditions ",
+                                      style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white,fontSize: 12)
+                                  ),
+                                ],
+                              ),
                             ),
-                            style: TextStyle(
-                                color: _passwordvalid!=true ? Colors.red :Colors.white,
-                                fontSize: 20,fontWeight: FontWeight.w700
-                            ),
-                          ),
-                          SizedBox(height: 20,),
-                          CupertinoButton(
-                            onPressed: (){},
-                            color: Colors.lightGreen,
-                            child: Text("Join Us",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 20,letterSpacing: 1),),
-                            padding: EdgeInsets.symmetric(horizontal: 120,vertical: 22),
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                          ),
-                          SizedBox(height: 20,),
-                          Container(
-                            child: Column(
-                              children: <Widget>[
-                                Text("By pressing \"Join Us\" you agree to",
-                                    style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white,fontSize: 12)
-                                ),
-                                Text("our terms & conditions ",
-                                    style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white,fontSize: 12)
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      )
+                          ],
+                        )
+                    ),
                   ),
                 )
-              ],
-            )
-        ),
+              ),
+            ],
+          )
       ),
     );
   }

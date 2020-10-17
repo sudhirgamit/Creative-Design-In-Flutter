@@ -107,6 +107,7 @@ class _SignUp_3State extends State<SignUp_3> {
               ),
             ),
             Container(
+              alignment: AlignmentDirectional.center,
               decoration: BoxDecoration(
                   color: Colors.teal,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10)),
@@ -126,11 +127,11 @@ class _SignUp_3State extends State<SignUp_3> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(
-                            padding: EdgeInsets.only(top: 50),
+                            padding: EdgeInsets.only(top: 15),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text("Sign In",style: TextStyle(fontSize: 35,letterSpacing: 1,fontWeight: FontWeight.w700,color: Colors.white),),
+                                Text("Sign Up",style: TextStyle(fontSize: 35,letterSpacing: 1,fontWeight: FontWeight.w700,color: Colors.white),),
                                 SizedBox(height: 6,),
                                 Text("Welcome, to creative design and sign up.",style: TextStyle(fontSize: 16,letterSpacing: 1,fontWeight: FontWeight.w700,color: Colors.white),),
                               ],
@@ -140,7 +141,7 @@ class _SignUp_3State extends State<SignUp_3> {
                           TextField(
                             onChanged: (String value){
                               setState(() {
-                                _emailvalidation(value);
+                                _namevalidation(value);
                                 checkname=value;
                               });
                             },
@@ -283,6 +284,7 @@ class _SignUp_3State extends State<SignUp_3> {
                               ),
                             ],
                           ),
+                          SizedBox(height: 15,),
                         ],
                       )
                   ),

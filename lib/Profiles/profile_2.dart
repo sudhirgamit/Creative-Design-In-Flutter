@@ -1,4 +1,3 @@
-import 'package:creativedesign/Layouts/rows.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
@@ -128,7 +127,7 @@ class _Profile_2State extends State<Profile_2> {
                             children: <Widget>[
                               Text("Full HD Photography",style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white,fontSize: 20),),
                               SizedBox(height: 10,),
-                              Text("Choose from hundred of hd photography background and download of beautiful wallpapers.",textAlign: TextAlign.justify,style: TextStyle(fontWeight: FontWeight.w300,color: Colors.white70,fontSize: 16)),
+                              Text("Choose from hundred of hd photography background and download of beautiful wallpapers.",textAlign: TextAlign.justify,style: TextStyle(fontWeight: FontWeight.w300,color: Colors.white70,fontSize: 16,letterSpacing: 0,wordSpacing: 0)),
                               SizedBox(height: 10,),
                               Row(
                                 children: <Widget>[

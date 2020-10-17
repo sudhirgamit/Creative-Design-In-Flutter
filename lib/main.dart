@@ -1,6 +1,7 @@
 import 'package:creativedesign/Advance_Animation/animated_text_kits.dart';
 import 'package:creativedesign/Advance_Animation/loading_animations.dart';
 import 'package:creativedesign/Advance_Multimedia/photo_filters.dart';
+import 'package:creativedesign/Advance_Multimedia/wallpapers.dart';
 import 'package:creativedesign/Animation/animated_align.dart';
 import 'package:creativedesign/Animation/animated_builder.dart';
 import 'package:creativedesign/Animation/animated_container.dart';
@@ -75,6 +76,11 @@ import 'package:creativedesign/Plugins/url_launchers.dart';
 import 'package:creativedesign/Profiles/profile_1.dart';
 import 'package:creativedesign/Profiles/profile_2.dart';
 import 'package:creativedesign/Profiles/profile_3.dart';
+import 'package:creativedesign/Profiles/profile_4.dart';
+import 'package:creativedesign/Settings/setting_1.dart';
+import 'package:creativedesign/Settings/setting_2.dart';
+import 'package:creativedesign/Settings/setting_3.dart';
+import 'package:creativedesign/Settings/setting_4.dart';
 import 'package:creativedesign/Socialmedia/connectivities.dart';
 import 'package:creativedesign/Socialmedia/facebook_signin.dart';
 import 'package:creativedesign/Socialmedia/google_signin.dart';
@@ -202,6 +208,7 @@ class MyApp extends StatelessWidget {
             "/loading_anim": (context)=>Loading_Animations(),
             // Multimedia
             "/photofilter": (context)=>Photo_Filters(),
+            "/wallpaper": (context)=>Wallpapers(),
             // Socialmedia
             "/connectivity": (context)=>Connectivities(),
             "/google_signin": (context)=>Google_SignIn(),
@@ -230,6 +237,12 @@ class MyApp extends StatelessWidget {
             "/profile_1": (context)=>Profile_1(),
             "/profile_2": (context)=>Profile_2(),
             "/profile_3": (context)=>Profile_3(),
+            "/profile_4": (context)=>Profile_4(),
+            // Settings
+            "/setting_1": (context)=>Setting_1(),
+            "/setting_2": (context)=>Setting_2(),
+            "/setting_3": (context)=>Setting_3(),
+            "/setting_4": (context)=>Setting_4(),
           },
         );
       },

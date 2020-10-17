@@ -40,7 +40,6 @@ class Login_3_Code extends StatelessWidget {
                   .apply(fontSizeFactor: 1.1),
               children: <TextSpan>[
                 DartSyntaxHighlighter(style).format("""
-import 'package:creativedesign/Authentication/signup_2.dart';
 import 'package:creativedesign/Authentication/signup_3.dart';
 import 'package:creativedesign/Pages/creative_design.dart';
 import 'package:flutter/cupertino.dart';
@@ -103,6 +102,7 @@ class _Login_3State extends State<Login_3> {
               ),
             ),
             Container(
+              alignment: AlignmentDirectional.center,
               decoration: BoxDecoration(
                 color: Colors.teal,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10)),
@@ -122,7 +122,7 @@ class _Login_3State extends State<Login_3> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(
-                            padding: EdgeInsets.only(top: 50),
+                            padding: EdgeInsets.only(top: 15),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
@@ -253,6 +253,7 @@ class _Login_3State extends State<Login_3> {
                               ),
                             ],
                           ),
+                          SizedBox(height: 15,),
                         ],
                       )
                   ),

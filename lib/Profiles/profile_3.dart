@@ -178,7 +178,8 @@ class _Profile_3State extends State<Profile_3> {
                             image: DecorationImage(
                               image: NetworkImage(_images[i]["image"]),
                               fit: BoxFit.cover
-                            )
+                            ),
+                            border: Border.all(color:Colors.green,width: 0.5)
                           ),
                         ),
                         Container(

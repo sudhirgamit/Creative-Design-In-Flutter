@@ -40,7 +40,6 @@ class Login_4_Code extends StatelessWidget {
                   .apply(fontSizeFactor: 1.1),
               children: <TextSpan>[
                 DartSyntaxHighlighter(style).format("""
-import 'package:creativedesign/Authentication/signup_2.dart';
 import 'package:creativedesign/Authentication/signup_4.dart';
 import 'package:creativedesign/Pages/creative_design.dart';
 import 'package:flutter/cupertino.dart';
@@ -62,16 +61,17 @@ class _Login_4State extends State<Login_4> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green,
-      body: Container(
-        width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Colors.lightGreen,Colors.green,Colors.lightGreen,]
+      body: SingleChildScrollView(
+        child: Container(
+          width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.lightGreen,Colors.green,Colors.lightGreen,]
+            ),
           ),
-        ),
-        child: SingleChildScrollView(
           child: SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.only(top: 20),
@@ -82,7 +82,6 @@ class _Login_4State extends State<Login_4> {
                       )
                   ),
                 ),
-                SizedBox(height: 20,),
                 Text("Sign In",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w300,fontSize: 40),),
                 SizedBox(height: 20,),
                 Container(
@@ -196,7 +195,8 @@ class _Login_4State extends State<Login_4> {
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(50),bottomLeft: Radius.circular(50)),
                     ),
                   ],
-                )
+                ),
+                SizedBox(height: 10,),
               ],
             ),
           ),
