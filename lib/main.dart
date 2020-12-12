@@ -1,4 +1,3 @@
-import 'package:creativedesign/Advance_Animation/animated_text_kits.dart';
 import 'package:creativedesign/Advance_Animation/loading_animations.dart';
 import 'package:creativedesign/Advance_Multimedia/photo_filters.dart';
 import 'package:creativedesign/Advance_Multimedia/wallpapers.dart';
@@ -42,6 +41,10 @@ import 'package:creativedesign/Cupertino/cupertino_slivernavbar.dart';
 import 'package:creativedesign/Cupertino/cupertino_timepicker.dart';
 import 'package:creativedesign/Database/mysql_database.dart';
 import 'package:creativedesign/Database/sqlite_database.dart';
+import 'package:creativedesign/E-Commerce/e_commerce_1.dart';
+import 'package:creativedesign/E-Commerce/e_commerce_2.dart';
+import 'package:creativedesign/E-Commerce/e_commerce_3.dart';
+import 'package:creativedesign/E-Commerce/e_commerce_4.dart';
 import 'package:creativedesign/Layouts/flexibles.dart';
 import 'package:creativedesign/Lists/expansion_tile.dart';
 import 'package:creativedesign/Lists/gridviews.dart';
@@ -204,7 +207,7 @@ class MyApp extends StatelessWidget {
             "/flut_slidable": (context)=>Flutter_Slidables(),
             "/carousel_slider": (context)=>Carousel_Sliders(),
             // Advance Animations
-            "/anim_text_kit": (context)=>Animated_Text_Kits(),
+            //"/anim_text_kit": (context)=>Animated_Text_Kits(),
             "/loading_anim": (context)=>Loading_Animations(),
             // Multimedia
             "/photofilter": (context)=>Photo_Filters(),
@@ -233,7 +236,7 @@ class MyApp extends StatelessWidget {
             "/signup_3": (context)=>SignUp_3(),
             "/login_4": (context)=>Login_4(),
             "/signup_4": (context)=>SignUp_4(),
-            // Authentication
+            // Profile
             "/profile_1": (context)=>Profile_1(),
             "/profile_2": (context)=>Profile_2(),
             "/profile_3": (context)=>Profile_3(),
@@ -243,6 +246,11 @@ class MyApp extends StatelessWidget {
             "/setting_2": (context)=>Setting_2(),
             "/setting_3": (context)=>Setting_3(),
             "/setting_4": (context)=>Setting_4(),
+            // E-Commerce
+            "/e_commerce_1": (context)=>E_Commerce_1(),
+            "/e_commerce_2": (context)=>E_Commerce_2(),
+            "/e_commerce_3": (context)=>E_Commerce_3(),
+            "/e_commerce_4": (context)=>E_Commerce_4(),
           },
         );
       },

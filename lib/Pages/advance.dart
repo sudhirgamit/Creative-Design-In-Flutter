@@ -91,7 +91,6 @@ class _AdvanceState extends State<Advance> {
             child: ListView(
               children: <Widget>[
                 Cardlist_Multimedia_Dialog("PhotoFilters","FloatingActionButton, Form, Column, Form, TextFormField, SharedPreferences",CupertinoIcons.photo_camera),
-                Cardlist_Multimedia_Dialog("Wallpaper","FloatingActionButton, Form, Column, Form, TextFormField, SharedPreferences",CupertinoIcons.photo_camera_solid),
               ],
             ),
           ),
@@ -219,8 +218,6 @@ class _AdvanceState extends State<Advance> {
         onTap: (){
           if(title=="PhotoFilters"){
             Navigator.pushReplacementNamed(context, "/photofilter");
-          }else if(title=="Wallpaper"){
-            Navigator.pushReplacementNamed(context, "/wallpaper");
           }
         },
       ),
