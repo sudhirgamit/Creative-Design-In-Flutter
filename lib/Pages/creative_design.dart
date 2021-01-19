@@ -10,6 +10,10 @@ import 'package:creativedesign/E-Commerce_Codes/e_commerce_1_code.dart';
 import 'package:creativedesign/E-Commerce_Codes/e_commerce_2_code.dart';
 import 'package:creativedesign/E-Commerce_Codes/e_commerce_3_code.dart';
 import 'package:creativedesign/E-Commerce_Codes/e_commerce_4_code.dart';
+import 'package:creativedesign/Food_Codes/food_1_code.dart';
+import 'package:creativedesign/Food_Codes/food_2_code.dart';
+import 'package:creativedesign/Food_Codes/food_3_code.dart';
+import 'package:creativedesign/Food_Codes/food_4_code.dart';
 import 'package:creativedesign/Pages/dashboard.dart';
 import 'package:creativedesign/Profiles_Codes/profile_1_code.dart';
 import 'package:creativedesign/Profiles_Codes/profile_2_code.dart';
@@ -192,6 +196,43 @@ class _Creative_DesignState extends State<Creative_Design> {
     );
   }
 
+  // Food
+  Widget Cardlist_Food_Dialog(String title,String subtitle,IconData icon){
+    return Card(
+      child: ListTile(
+        leading: Icon(icon,color: Colors.black),
+        title: Text(title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18,color: Colors.black),),
+        subtitle: Text(subtitle,maxLines: 2,overflow: TextOverflow.ellipsis,),
+        trailing: IconButton(
+          onPressed: (){
+            if(title=="Food 1"){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Food_1_Code()));
+            }else if(title=="Food 2"){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Food_2_Code()));
+            }else if(title=="Food 3"){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Food_3_Code()));
+            }else if(title=="Food 4"){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Food_4_Code()));
+            }
+          },
+          icon: Icon(Icons.android,color: Colors.teal),
+        ),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
+        onTap: (){
+          if(title=="Food 1"){
+            Navigator.pushReplacementNamed(context, "/food_1");
+          }else if(title=="Food 2"){
+            Navigator.pushReplacementNamed(context, "/food_2");
+          }else if(title=="Food 3"){
+            Navigator.pushReplacementNamed(context, "/food_3");
+          }else if(title=="Food 4"){
+            Navigator.pushReplacementNamed(context, "/food_4");
+          }
+        },
+      ),
+    );
+  }
+
   // All The Pages To Creative Design In Flutter
   Widget Cardlist_Head(String title,IconData icon){
     return Card(
@@ -208,7 +249,7 @@ class _Creative_DesignState extends State<Creative_Design> {
           }else if(title=="E-Commerce"){
             _showModelButtomSheet_ECommerce(context);
           } else if(title=="Foods"){
-            //_showModelButtomSheet_Database(context);
+            _showModelButtomSheet_Food(context);
           }else if(title=="Miscellaneous"){
             //_showModelButtomSheet_Other_Widgets(context);
           }
@@ -304,6 +345,28 @@ class _Creative_DesignState extends State<Creative_Design> {
                 Cardlist_ECommerce_Dialog("E-Commerce 2","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_two),
                 Cardlist_ECommerce_Dialog("E-Commerce 3","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_3),
                 Cardlist_ECommerce_Dialog("E-Commerce 4","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_4),
+              ],
+            ),
+          ),
+        )
+    );
+  }
+
+  // Buttom Sheet Food
+  Widget _showModelButtomSheet_Food(context){
+    showModalBottomSheet(
+        backgroundColor: Colors.transparent,
+        context: context,
+        builder: (BuildContext context)=>Card(
+          color: Colors.white70.withOpacity(0.7),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView(
+              children: <Widget>[
+                Cardlist_Food_Dialog("Food 1","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_one),
+                Cardlist_Food_Dialog("Food 2","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_two),
+                Cardlist_Food_Dialog("Food 3","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_3),
+                Cardlist_Food_Dialog("Food 4","SingleChildScrollView, SafeArea, Column, Form, TextField, CupertinoButton",Icons.looks_4),
               ],
             ),
           ),

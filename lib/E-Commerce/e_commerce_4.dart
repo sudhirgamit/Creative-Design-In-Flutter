@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:creativedesign/E-Commerce/details_4.dart';
 import 'package:creativedesign/Layouts/columns.dart';
+import 'package:creativedesign/Pages/creative_design.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +47,11 @@ class _E_Commerce_4State extends State<E_Commerce_4> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     IconButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        setState(() {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Creative_Design()));
+                        });
+                      },
                       icon: Icon(Icons.arrow_back_ios,color: Colors.white,size: 22,),
                     ),
                     Text("Earphone",style: TextStyle(fontSize: 22,color: Colors.white),),

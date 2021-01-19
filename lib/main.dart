@@ -45,6 +45,10 @@ import 'package:creativedesign/E-Commerce/e_commerce_1.dart';
 import 'package:creativedesign/E-Commerce/e_commerce_2.dart';
 import 'package:creativedesign/E-Commerce/e_commerce_3.dart';
 import 'package:creativedesign/E-Commerce/e_commerce_4.dart';
+import 'package:creativedesign/Food/food_1.dart';
+import 'package:creativedesign/Food/food_2.dart';
+import 'package:creativedesign/Food/food_3.dart';
+import 'package:creativedesign/Food/food_4.dart';
 import 'package:creativedesign/Layouts/flexibles.dart';
 import 'package:creativedesign/Lists/expansion_tile.dart';
 import 'package:creativedesign/Lists/gridviews.dart';
@@ -251,6 +255,11 @@ class MyApp extends StatelessWidget {
             "/e_commerce_2": (context)=>E_Commerce_2(),
             "/e_commerce_3": (context)=>E_Commerce_3(),
             "/e_commerce_4": (context)=>E_Commerce_4(),
+            // Food
+            "/food_1": (context)=>Food_1(),
+            "/food_2": (context)=>Food_2(),
+            "/food_3": (context)=>Food_3(),
+            "/food_4": (context)=>Food_4(),
           },
         );
       },
